@@ -39,7 +39,7 @@ Despite healthy topline revenue, the business faces critical bottlenecks that th
 To solve the high churn rate, I connected three distinct analytical approaches—Cohort Analysis, Product Correlation, and Market Basket Analysis—to find the root cause and the optimal solution.
 
 ### Part 1: The Symptom - When do we lose customers?
-![Customer Cohort Retention Heatmap](images/cohort_heatmap.png)
+![Customer Cohort Retention Heatmap](images/customer_cohort.png)
 
 * **Insight:** The Cohort Retention Heatmap reveals a drastic drop-off immediately after the first month. For instance, the Jan 2011 cohort drops from 100% down to just 22% by Month 1.
 * **Conclusion:** The business does not have an acquisition problem; it has a **post-purchase experience problem**. The critical window to retain a customer is within the first 30 days.
@@ -47,7 +47,7 @@ To solve the high churn rate, I connected three distinct analytical approaches�
 ### Part 2: The Root Cause - Why are they leaving?
 To understand *why*, I analyzed the specific items present in the baskets of churned customers.
 
-![Top Products Purchased by Churn Customers](images/churn_products.png)
+![Top Products Purchased by Churn Customers](images/churn_product.png)
 
 * **Insight:** Churned users heavily over-index on specific items: *White Hanging Heart T-Light Holder, Regency Cakestand 3 Tier, and Party Bunting.*
 * **Strategic Diagnosis (2 Hypotheses):**
@@ -57,7 +57,7 @@ To understand *why*, I analyzed the specific items present in the baskets of chu
 ### Part 3: The Solution - Maximizing Value Upfront (FP-Growth)
 If customers are naturally prone to leaving after one event-driven purchase, the strategy must pivot from *long-term retention* to **maximizing Average Order Value (AOV) upfront**. I applied the **FP-Growth algorithm** to discover high-affinity cross-sell opportunities.
 
-![Market Basket Analysis - FP Growth](images/fp_growth_table.png)
+![Market Basket Analysis - FP Growth](images/fp_growthtable.png)
 
 * **Insight:** The ML model yielded incredibly strong association rules:
   * **The Christmas Set:** `Wooden Heart` & `Wooden Star` (Lift: **26.54**, Confidence: 81%).
