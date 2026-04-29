@@ -57,7 +57,7 @@ To understand *why*, I analyzed the specific items present in the baskets of chu
 ### Part 3: The Solution - Maximizing Value Upfront (FP-Growth)
 If customers are naturally prone to leaving after one event-driven purchase, the strategy must pivot from *long-term retention* to **maximizing Average Order Value (AOV) upfront**. I applied the **FP-Growth algorithm** to discover high-affinity cross-sell opportunities.
 
-![Market Basket Analysis - FP Growth](images/fp_growthtable.png)
+![Market Basket Analysis - FP Growth](images/fp-growth-table.png)
 
 * **Insight:** The ML model yielded incredibly strong association rules:
   * **The Christmas Set:** `Wooden Heart` & `Wooden Star` (Lift: **26.54**, Confidence: 81%).
