@@ -26,31 +26,36 @@ Using PySpark and Python, the project explores customer purchasing trends, ident
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Data Processing
 
-* PySpark
-
-  * Spark SQL
-  * Window Functions
-  * RDDs
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Spark SQL](https://img.shields.io/badge/Spark_SQL-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Window Functions](https://img.shields.io/badge/Window_Functions-FF6F00?style=for-the-badge)
+![RDDs](https://img.shields.io/badge/RDDs-FF6F00?style=for-the-badge)
 
 ### Data Analysis
 
-* Pandas
-* NumPy
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
 ### Data Visualization
 
-* Matplotlib
-* Seaborn
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
 
 ### Machine Learning
 
-* Scikit-learn
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-EC6B23?style=for-the-badge)
+![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=for-the-badge)
 
----
+### Development Environment
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ## Dataset Overview
 
@@ -340,26 +345,6 @@ Segments identified:
 
 #### Key Findings
 
-* A small proportion of customers generated the majority of revenue.
-* Loyal customers exhibited significantly higher order frequency.
-* Churn risk was concentrated among low-frequency purchasers.
-
----
-
-### 2.4 Retention and Churn Analysis
-
-Objectives:
-
-* Quantify churn rate
-* Understand churn behavior
-* Identify risk indicators
-
-#### Key Findings
-
-* Churned customers displayed substantially longer inactivity periods.
-* Purchase frequency strongly influenced retention.
-* Monetary value alone was insufficient to predict churn.
-
 ---
 
 ## 3. Churn Prediction
@@ -385,34 +370,27 @@ Candidate features included:
 
 ### 3.3 Model Development
 
-Workflow:
+The model development process followed a standardized workflow to ensure fair comparison across all algorithms:
 
-1. Train-test split
-2. Feature scaling
-3. Model training
-4. Hyperparameter tuning
-5. Cross-validation
+```mermaid
+flowchart LR
+    A["📂 Train-Test Split"] --> B["⚙️ Feature Scaling"]
+    B --> C["🤖 Model Training"]
+    C --> D["🔍 Hyperparameter Tuning"]
+    D --> E["✅ Cross Validation"]
+```
 
-Models evaluated:
-
-* Logistic Regression
-* Random Forest
-* XGBoost
-* LightGBM 
+| Model | Category | Role in Analysis | Validation Strategy |
+|---------|---------|---------|---------|
+| Logistic Regression | Baseline Model | Establish a simple and interpretable benchmark for churn prediction | 3-Fold Cross Validation |
+| Decision Tree | Baseline Model | Capture non-linear customer behaviors while maintaining model interpretability | 3-Fold Cross Validation |
+| Random Forest | Ensemble Learning | Improve prediction performance through bagging and feature randomness | 3-Fold Cross Validation |
+| XGBoost | Gradient Boosting | Capture complex interactions and optimize predictive accuracy | 3-Fold Cross Validation |
+| LightGBM | Gradient Boosting | Provide efficient training and strong predictive performance on large datasets | 3-Fold Cross Validation |
 
 ### 3.4 Model Evaluation
 
-Evaluation metrics:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Macro F1 Score 
-* ROC-AUC
 ### Ensemble Model 
-
-# Key Business Insights
 
 # Repository Structure
 
