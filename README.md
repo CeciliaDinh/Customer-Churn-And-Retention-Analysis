@@ -18,12 +18,10 @@ Using PySpark and Python, the project explores customer purchasing trends, ident
 
 * Analyze revenue growth and sales performance
 * Understand customer purchasing behavior
-* Identify customer segments through RFM analysis
 * Detect and profile churned customers
 * Discover key drivers of customer churn
 * Build a customer churn prediction model
 * Recommend actionable retention strategies
-
 ---
 
 ## 🛠️ Tech Stack
@@ -112,241 +110,116 @@ The strong sales performance in 2011 was primarily driven by:
 
 # Methodology
 
-## 1. Data Preparation
+## ✅ 1. Data Preparation
 
-### 1.1 Data Cleaning
+### ✅ 1.1 Data Cleaning
 
-To ensure data quality and reliable customer analytics, the following preprocessing steps were performed.
+To ensure data quality and reliable customer analytics, the following preprocessing steps were performed:
 
-#### Data Type Validation
+#### ☑️ Data Type Validation
 
-* Verified schema and column data types.
-* Converted `InvoiceDate` from string to timestamp format.
+- [x] Verified schema and column data types
+- [x] Converted `InvoiceDate` from string to timestamp format
 
-#### Missing Value Handling
+#### ☑️ Missing Value Handling
 
-* Audited missing values across all columns.
-* Removed 1,454 records with missing product descriptions.
-* Replaced missing `CustomerID` values (135,080 rows) with `"Unknown"`.
+- [x] Audited missing values across all columns
+- [x] Removed **1,454** records with missing product descriptions
+- [x] Replaced missing `CustomerID` values (**135,080 rows**) with `"Unknown"`
 
-#### Duplicate Removal
+#### ☑️ Duplicate Removal
 
-* Identified and removed duplicate transaction records.
+- [x] Identified and removed duplicate transaction records
 
-#### Invalid Transaction Filtering
+#### ☑️ Invalid Transaction Filtering
 
-Removed:
+- [x] Removed cancelled invoices (`InvoiceNo` beginning with `"C"`)
+- [x] Removed negative quantities
+- [x] Removed negative unit prices
+- [x] Retained only valid purchase transactions
 
-* Cancelled invoices (`InvoiceNo` beginning with `"C"`)
-* Negative quantities
-* Negative unit prices
+#### ☑️ Non-Product Transaction Removal
 
-Only valid purchases were retained for analysis.
+Excluded operational records such as:
 
-#### Non-Product Transaction Removal
+- [x] POST
+- [x] DOT
+- [x] M
+- [x] BANK CHARGES
+- [x] AMAZONFEE
+- [x] Gift Voucher Entries
+- [x] Administrative Adjustment Codes
 
-Excluded operational records including:
+#### ☑️ Revenue Feature Creation
 
-* POST
-* DOT
-* M
-* BANK CHARGES
-* AMAZONFEE
-* Gift voucher entries
-* Administrative adjustment codes
-
-#### Revenue Feature Creation
-
-Created a transaction-level metric:
+- [x] Created transaction-level revenue metric
 
 ```python
 TotalPrice = Quantity * UnitPrice
 ```
 
-This metric was used for revenue, customer value, and RFM calculations.
+- [x] Used for revenue analysis, customer value measurement, and RFM calculations
+
+> ⚠️ **Important Note**
+>
+> Transactions with `InvoiceNo` starting with **"C"** indicate cancelled orders and were excluded from subsequent analysis.
 
 ---
 
-### 1.2 Outlier Detection
+### ✅ 1.2 Outlier Detection
 
-Outliers were analyzed across:
+Customer-level outliers were investigated before segmentation and churn modeling.
 
-* Customer spending
-* Purchase frequency
-* Transaction values
+#### Analysis Checklist
 
-Methods used:
+- [x] Customer Spending Distribution
+- [x] Purchase Frequency Distribution
+- [x] Transaction Value Distribution
 
-* Boxplots
-* Percentile analysis
-* Distribution visualization
+#### Methods Applied
 
-Extreme customer values were retained where appropriate, as they represent genuine high-value customers rather than data errors.
+- [x] Boxplot Analysis
+- [x] Percentile Analysis
+- [x] Distribution Visualization
+
+#### Decision
+
+- [x] Retained extreme customer values where appropriate
+- [x] High-value customers were treated as genuine business behavior rather than data errors
 
 ---
 
-### 1.3 Feature Engineering
+### ✅ 1.3 Feature Engineering
 
 Customer-level features were created to support segmentation and churn prediction.
 
-#### RFM Metrics
+#### ☑️ RFM Feature Construction
 
-| Feature   | Definition                      |
-| --------- | ------------------------------- |
-| Recency   | Days since most recent purchase |
-| Frequency | Number of unique orders         |
-| Monetary  | Total customer spending         |
+| Feature | Description |
+|----------|-------------|
+| 🕒 Recency | Days since most recent purchase |
+| 🔄 Frequency | Number of unique orders |
+| 💰 Monetary | Total customer spending |
 
-### Churn Label Creation
+#### ☑️ Churn Label Creation
 
-Because the dataset does not contain an explicit churn indicator, a rule-based churn definition was created.
+Since the dataset does not contain an explicit churn indicator, a rule-based churn definition was developed.
 
-A customer is classified as churned when:
+##### Churn Definition
 
-* Recency > 108 days (70th percentile)
-* Frequency ≤ 4 orders (70th percentile)
+- [x] Recency > 108 days (70th percentile)
+- [x] Frequency ≤ 4 orders (70th percentile)
 
-| Churn Status | Condition                       |
-| ------------ | ------------------------------- |
-| Churn = 1    | Recency > 108 AND Frequency ≤ 4 |
-| Churn = 0    | Otherwise                       |
+| Label | Rule |
+|--------|--------|
+| 🔴 Churn = 1 | Recency > 108 AND Frequency ≤ 4 |
+| 🟢 Churn = 0 | Otherwise |
 
-This churn label serves as the target variable for predictive modeling.
-
----
+> 🎯 The resulting churn label was used as the target variable for predictive modeling.
 
 ## 2. Exploratory Data Analysis
 
 ### 2.1 Analytical Framework
-### 2.1 Analytical Framework
-
-The analysis was designed around the central business question:
-
-> **How can the company sustainably grow revenue while improving customer retention?**
-
-To answer this question, revenue performance was decomposed into four key growth levers:
-
-* Customer Acquisition
-* Purchase Frequency
-* Average Order Value (AOV)
-* Customer Retention
-
-The analytical framework consists of five complementary perspectives:
-
-#### Growth Analysis
-
-Evaluate overall business performance and identify the primary drivers of revenue growth.
-
-**Key metrics**
-
-* Revenue
-* Total Customers
-* Total Orders
-* Average Order Value (AOV)
-* Average Basket Size
-* Cancelled Orders
-
-**Business questions**
-
-* What factors contributed most to revenue growth?
-* Is growth driven by customer acquisition, purchase frequency, or spending?
-* Are there recurring seasonal patterns across months or quarters?
-
----
-
-#### Product Analysis
-
-Understand which products contribute most to revenue, customer acquisition, and long-term retention.
-
-**Business questions**
-
-* Which products and categories generate the highest revenue?
-* Which products experienced the strongest growth?
-* What products are commonly purchased by retained customers?
-* Which products drive repeat purchasing behavior?
-* Are churned customers concentrated within specific products or categories?
-
----
-
-#### Customer Analysis
-
-Examine customer purchasing behavior throughout the customer lifecycle.
-
-**Business questions**
-
-* How quickly do customers make their second purchase?
-* What percentage of customers never return after their first order?
-* Which behaviors are associated with long-term retention?
-* How do spending patterns differ between retained and churned customers?
-* Do loyal customers purchase more frequently, spend more, or explore a wider range of products?
-
----
-
-#### Geographic Analysis
-
-Identify markets with the strongest growth potential and retention performance.
-
-**Business questions**
-
-* Which countries contribute the most revenue and customer growth?
-* Where are new customers being acquired?
-* How do retention and churn rates vary across locations?
-* Which markets present opportunities for further expansion?
-
----
-
-#### Cohort Analysis
-
-Evaluate customer retention and value across acquisition cohorts.
-
-**Business questions**
-
-* Which customer cohorts demonstrate the strongest retention?
-* Are recently acquired customers becoming more or less valuable over time?
-* Which cohorts contribute the highest long-term customer value?
-
----
-
-By combining these perspectives, the analysis aims to uncover the key drivers of growth, identify factors influencing customer churn, and provide actionable recommendations to improve customer lifetime value and long-term business performance.
-
-
----
-
-### 2.2 Revenue Analysis
-
-Key questions:
-
-* How has revenue evolved over time?
-* Are there seasonal purchasing patterns?
-* Which product categories drive revenue growth?
-* What factors contributed to peak sales periods?
-
-#### Key Findings
-
-* Revenue increased significantly throughout 2011.
-* Strong seasonal effects were observed during Q4.
-* November 2011 generated the highest monthly sales.
-* High-priced product categories contributed the majority of revenue.
-
----
-
-### 2.3 Customer Segmentation Analysis
-
-Customers were segmented using RFM analysis.
-
-Segments identified:
-
-* Champions
-* Loyal Customers
-* Potential Loyalists
-* At Risk
-* Hibernating Customers
-* Lost Customers
-
-#### Key Findings
-
----
-
 ## 3. Churn Prediction
 
 ### 3.1 Problem Statement
@@ -356,15 +229,6 @@ Develop a classification model capable of predicting whether a customer is likel
 ---
 
 ### 3.2 Feature Selection
-
-Candidate features included:
-
-* Recency
-* Frequency
-* Monetary
-* Average Order Value
-* Purchase Interval
-* Customer Lifetime Metrics
 
 ---
 
