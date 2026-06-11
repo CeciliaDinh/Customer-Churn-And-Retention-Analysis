@@ -213,16 +213,97 @@ This churn label serves as the target variable for predictive modeling.
 ## 2. Exploratory Data Analysis
 
 ### 2.1 Analytical Framework
+### 2.1 Analytical Framework
 
-The following business metrics were evaluated:
+The analysis was designed around the central business question:
+
+> **How can the company sustainably grow revenue while improving customer retention?**
+
+To answer this question, revenue performance was decomposed into four key growth levers:
+
+* Customer Acquisition
+* Purchase Frequency
+* Average Order Value (AOV)
+* Customer Retention
+
+The analytical framework consists of five complementary perspectives:
+
+#### Growth Analysis
+
+Evaluate overall business performance and identify the primary drivers of revenue growth.
+
+**Key metrics**
 
 * Revenue
-* Active Customers
+* Total Customers
+* Total Orders
 * Average Order Value (AOV)
-* Purchase Frequency
-* Customer Lifetime Value (CLV)
-* Customer Retention Rate
-* Customer Churn Rate
+* Average Basket Size
+* Cancelled Orders
+
+**Business questions**
+
+* What factors contributed most to revenue growth?
+* Is growth driven by customer acquisition, purchase frequency, or spending?
+* Are there recurring seasonal patterns across months or quarters?
+
+---
+
+#### Product Analysis
+
+Understand which products contribute most to revenue, customer acquisition, and long-term retention.
+
+**Business questions**
+
+* Which products and categories generate the highest revenue?
+* Which products experienced the strongest growth?
+* What products are commonly purchased by retained customers?
+* Which products drive repeat purchasing behavior?
+* Are churned customers concentrated within specific products or categories?
+
+---
+
+#### Customer Analysis
+
+Examine customer purchasing behavior throughout the customer lifecycle.
+
+**Business questions**
+
+* How quickly do customers make their second purchase?
+* What percentage of customers never return after their first order?
+* Which behaviors are associated with long-term retention?
+* How do spending patterns differ between retained and churned customers?
+* Do loyal customers purchase more frequently, spend more, or explore a wider range of products?
+
+---
+
+#### Geographic Analysis
+
+Identify markets with the strongest growth potential and retention performance.
+
+**Business questions**
+
+* Which countries contribute the most revenue and customer growth?
+* Where are new customers being acquired?
+* How do retention and churn rates vary across locations?
+* Which markets present opportunities for further expansion?
+
+---
+
+#### Cohort Analysis
+
+Evaluate customer retention and value across acquisition cohorts.
+
+**Business questions**
+
+* Which customer cohorts demonstrate the strongest retention?
+* Are recently acquired customers becoming more or less valuable over time?
+* Which cohorts contribute the highest long-term customer value?
+
+---
+
+By combining these perspectives, the analysis aims to uncover the key drivers of growth, identify factors influencing customer churn, and provide actionable recommendations to improve customer lifetime value and long-term business performance.
+
 
 ---
 
@@ -316,9 +397,8 @@ Models evaluated:
 
 * Logistic Regression
 * Random Forest
-* XGBoost (Optional)
-
----
+* XGBoost
+* LightGBM 
 
 ### 3.4 Model Evaluation
 
@@ -328,64 +408,11 @@ Evaluation metrics:
 * Precision
 * Recall
 * F1 Score
+* Macro F1 Score 
 * ROC-AUC
-
-Model performance was compared to identify the best balance between identifying churned customers and minimizing false positives.
-
----
+### Ensemble Model 
 
 # Key Business Insights
-
-### Revenue Drivers
-
-* Growth in active customers was the primary contributor to revenue expansion.
-* Higher-value product categories generated a disproportionate share of revenue.
-
-### Customer Behavior
-
-* Repeat customers contributed the majority of revenue.
-* Customer retention strongly correlated with purchase frequency.
-
-### Churn Indicators
-
-Strong indicators of churn included:
-
-* Long inactivity periods
-* Low order frequency
-* Low customer engagement
-
----
-
-# Recommendations
-
-### Customer Retention
-
-* Launch reactivation campaigns targeting inactive customers.
-* Offer personalized promotions to at-risk segments.
-* Implement loyalty and rewards programs.
-
-### Revenue Growth
-
-* Prioritize acquisition of high-value customer segments.
-* Cross-sell complementary products to existing customers.
-* Promote high-margin product categories.
-
-### Predictive Analytics
-
-* Deploy churn monitoring dashboards.
-* Integrate churn prediction into CRM workflows.
-* Trigger retention campaigns automatically for high-risk customers.
-
----
-
-# Future Improvements
-
-* Incorporate marketing campaign data.
-* Include customer demographics.
-* Develop real-time churn prediction pipelines.
-* Build an interactive dashboard using Power BI or Tableau.
-
----
 
 # Repository Structure
 
@@ -397,7 +424,6 @@ Customer-Churn-And-Retention-Analysis/
 │   └── processed/
 │
 ├── notebooks/
-│   ├── Data_Cleaning.ipynb
 │   ├── EDA.ipynb
 │   └── Churn_Modeling.ipynb
 │
@@ -413,13 +439,3 @@ Customer-Churn-And-Retention-Analysis/
 │
 └── requirements.txt
 ```
-
----
-
-## Contact
-
-**Dinh Thi Thanh Hang**
-
-* LinkedIn: *Your LinkedIn URL*
-* Email: *Your Email Address*
-* GitHub: *Your GitHub Profile*
