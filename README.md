@@ -10,8 +10,6 @@
 
 ---
 
-## 📌 Project Contents (Click on each section to expand)
-
 <details>
   <summary><b>📖 1. Project Overview & Business Objectives</b></summary>
   <br>
