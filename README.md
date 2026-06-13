@@ -158,14 +158,6 @@ Develop a classification model capable of predicting whether a customer is likel
 
 The model development process followed a standardized workflow to ensure fair comparison across all algorithms:
 
-```mermaid
-flowchart LR
-    A["📂 Train-Test Split"] --> B["⚙️ Feature Scaling"]
-    B --> C["🤖 Model Training"]
-    C --> D["🔍 Hyperparameter Tuning"]
-    D --> E["✅ Cross Validation"]
-```
-
 | Model | Category | Role in Analysis | Validation Strategy |
 |---------|---------|---------|---------|
 | Logistic Regression | Baseline Model | Establish a simple and interpretable benchmark for churn prediction | 3-Fold Cross Validation |
