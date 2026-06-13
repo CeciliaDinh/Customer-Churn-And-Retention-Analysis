@@ -16,61 +16,32 @@ Using PySpark and Python, the project explores customer purchasing trends, ident
 
 ### Business Objectives
 
-* Analyze revenue growth and sales performance
-* Understand customer purchasing behavior
-* Detect and profile churned customers
-* Discover key drivers of customer churn
-* Build a customer churn prediction model
-* Recommend actionable retention strategies
----
+* Identify and validate seasonal trends and top-performing products 
+* Discover key drivers of growth, profile customer segments based on purchasing behaviors 
+* Developed churn prediction model, pintpoint key drivers of churn 
+* Developed strategies for customer growth and retention, cross-sell and up-sell 
 
 ## 🛠️ Tech Stack
 
 ### Data Processing
-
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 ![Spark SQL](https://img.shields.io/badge/Spark_SQL-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 ![Window Functions](https://img.shields.io/badge/Window_Functions-FF6F00?style=for-the-badge)
 ![RDDs](https://img.shields.io/badge/RDDs-FF6F00?style=for-the-badge)
-
 ### Data Analysis
-
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-
 ### Data Visualization
-
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
 ![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
-
 ### Machine Learning
-
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-EC6B23?style=for-the-badge)
 ![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=for-the-badge)
-
-### Development Environment
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-
 ## Dataset Overview
-
 The dataset contains transactional records from a UK-based online retailer.
 
 ### Dataset Characteristics
-
-| Metric             | Value                                |
-| ------------------ | ------------------------------------ |
-| Transactions       | 500,000+                             |
-| Country Coverage   | Primarily United Kingdom             |
-| Business Type      | B2B Online Retail                    |
-| Product Categories | Gifts, Decorations, Home Accessories |
-| Observation Period | Dec 2010 – Dec 2011                  |
-
-### Key Fields
-
 | Column      | Description               |
 | ----------- | ------------------------- |
 | InvoiceNo   | Transaction identifier    |
@@ -122,21 +93,11 @@ To ensure data quality and reliable customer analytics, the following preprocess
 - [x] Converted `InvoiceDate` from string to timestamp format
 
 #### ☑️ Missing Value Handling
-
-- [x] Audited missing values across all columns
 - [x] Removed **1,454** records with missing product descriptions
-- [x] Replaced missing `CustomerID` values (**135,080 rows**) with `"Unknown"`
-
+- [x] Replaced missing `CustomerID` values (**135,080 rows**) with Guest_InvoiceID 
 #### ☑️ Duplicate Removal
 
 - [x] Identified and removed duplicate transaction records
-
-#### ☑️ Invalid Transaction Filtering
-
-- [x] Removed cancelled invoices (`InvoiceNo` beginning with `"C"`)
-- [x] Removed negative quantities
-- [x] Removed negative unit prices
-- [x] Retained only valid purchase transactions
 
 #### ☑️ Non-Product Transaction Removal
 
@@ -149,44 +110,6 @@ Excluded operational records such as:
 - [x] AMAZONFEE
 - [x] Gift Voucher Entries
 - [x] Administrative Adjustment Codes
-
-#### ☑️ Revenue Feature Creation
-
-- [x] Created transaction-level revenue metric
-
-```python
-TotalPrice = Quantity * UnitPrice
-```
-
-- [x] Used for revenue analysis, customer value measurement, and RFM calculations
-
-> ⚠️ **Important Note**
->
-> Transactions with `InvoiceNo` starting with **"C"** indicate cancelled orders and were excluded from subsequent analysis.
-
----
-
-### ✅ 1.2 Outlier Detection
-
-Customer-level outliers were investigated before segmentation and churn modeling.
-
-#### Analysis Checklist
-
-- [x] Customer Spending Distribution
-- [x] Purchase Frequency Distribution
-- [x] Transaction Value Distribution
-
-#### Methods Applied
-
-- [x] Boxplot Analysis
-- [x] Percentile Analysis
-- [x] Distribution Visualization
-
-#### Decision
-
-- [x] Retained extreme customer values where appropriate
-- [x] High-value customers were treated as genuine business behavior rather than data errors
-
 ---
 
 ### ✅ 1.3 Feature Engineering
@@ -230,7 +153,6 @@ Develop a classification model capable of predicting whether a customer is likel
 
 ### 3.2 Feature Selection
 
----
 
 ### 3.3 Model Development
 
