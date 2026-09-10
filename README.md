@@ -270,7 +270,7 @@ Original feature values were retained alongside the winsorized versions to suppo
 The figure below illustrates the distributions before and after percentile-based capping.
 
 <div align="center">
-  <img src="./images/01_winsorization_boxplot_comparison.png"
+  <img src="./data_viz/01_winsorization_boxplot_comparison.png"
        alt="Numerical Features Before and After Winsorization"
        width="90%">
 </div>
