@@ -1,7 +1,7 @@
-# Customer Churn and Retention Analysis
+# Customer Growth and Retention Analysis
 
 <div align="center">
-  <img src="./images/churn_prediction.png" alt="Customer Churn and Retention Analysis Banner" width="100%">
+  <img src="./images/churn_prediction.png" alt="Customer Growth And Retention Analysis Banner" width="100%">
 </div>
 
 <br>
