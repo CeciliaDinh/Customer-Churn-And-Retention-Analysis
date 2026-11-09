@@ -110,48 +110,80 @@ The analysis follows three stages, moving from business performance to customer 
 
 </details>
 
-<details>
+<details open>
 <summary><strong>6. Key Findings & Business Recommendations</strong></summary>
 
-**Customer Acquisition & Early Engagement**
+### 6.1 Revenue Growth & Performance Drivers
+
+<div align="center">
+  <img src="./images/quarterly_revenue_trend.png" alt="Quarterly Revenue Trend" width="100%">
+  <br><br>
+  <img src="./images/revenue_growth_drivers.png" alt="Revenue Growth Driver Decomposition" width="100%">
+</div>
+<br>
+
+**Key Observations:**
+- **Overall Revenue multiplied ~4.7× (+368.9%)**, surging from **£567K** in **2010-Q4** to **£2.66M** in **2011-Q4** (+£2.09M net expansion).
+- Revenue accelerated consistently quarter-over-quarter: **£567K (2010-Q4) → £1.59M (2011-Q1) → £1.77M (2011-Q2) → £2.17M (2011-Q3) → £2.66M (2011-Q4)**.
+- **Total Orders placed** expanded dramatically by **+281.7%** (from **1,394** to **5,321** orders).
+- The multiplicative log-decomposition indicates that revenue growth was driven by:
+    1. **Purchasing Customer Base Expansion was the primary engine**, contributing **68.8%** to total revenue growth as active buyer volume surged **+189.5%** (from **884** to **2,559** customers).
+    2. **Higher Order Frequency** contributed **17.9%**, improving from **1.58** to **2.08** orders/customer (**+31.9%**).
+    3. **Average Order Value (AOV)** expansion contributed **13.3%**, lifting from **£407.10** to **£500.10** (**+22.8%**), supported by a **+29.7%** increase in average items per basket.
+
+*Business Implications:*
+- Top-line scale is heavily volume-dependent; sustained top-line momentum requires maintaining healthy top-of-funnel customer acquisition while building structural retention loops.
+- Improving order velocity (2.08) and basket size indicates expanding wallet share among active buyers, presenting immediate cross-selling and bundling opportunities.
+
+---
+
+### 6.2 Customer Acquisition & Early Engagement
 
 - Approximately 30% of customers disengaged after only one or two purchases.
 - Around 20% of new customers showed a preference for premium home décor products in Q3.
 
-*Business implications:*
+*Business Implications:*
 - Strengthen onboarding and post-purchase engagement.
 - Encourage second purchases through relevant product recommendations.
 - Explore targeted acquisition based on promising customer and product profiles.
 
-**Customer Retention & Churn Behavior**
+---
+
+### 6.3 Customer Retention & Churn Behavior
 
 - Customers with no repeat purchase within 30 days showed approximately 3× higher churn risk.
 - Customers purchasing only one product had a churn rate of approximately 71%.
 - Broader product engagement was associated with lower churn risk.
 
-*Business implications:*
+*Business Implications:*
 - Prioritize early re-engagement before customers become inactive.
 - Encourage product discovery and cross-selling.
 - Monitor customers with limited purchasing history as an early-warning segment.
 
-**Product Affinity & Cross-Selling**
+---
+
+### 6.4 Product Affinity & Cross-Selling
 
 - FP-Growth identified product associations with co-purchase strength exceeding 60%.
 
-*Business implications:*
+*Business Implications:*
 - Use frequently co-purchased products to design bundles and cross-selling recommendations.
 - Promote complementary products to increase product engagement and repeat purchasing.
 
-**Churn Prediction Performance**
+---
+
+### 6.5 Churn Prediction Performance
 
 - LightGBM achieved an ROC-AUC of **0.77** using Out-of-Time validation.
 - The model achieved **1.35× Lift@20%**.
 - SHAP analysis highlighted cancellations, product diversity, and customer tenure among the important churn-related features.
 
-*Business implications:*
+*Business Implications:*
 - Use model scores to prioritize retention outreach.
 - Investigate cancellation behavior and declining product engagement.
 - Combine predictive scores with customer value when allocating retention resources.
+
+</details>
 
 </details>
 
