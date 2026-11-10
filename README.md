@@ -262,6 +262,21 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
 
 ---
 ---
+---
+
+### **8. Place: Geographic Concentration & Market Expansion**
+
+> **Executive Summary:** Geographic revenue displays **extreme single-market dependency**, with the domestic UK market generating **82.9%** of total sales. International footprint is primarily concentrated in contiguous Western European markets.
+
+* **Domestic Dominance:** The **United Kingdom** is the undisputed anchor market, contributing **£7.24M (82.9%)** of total revenue. 
+* **The European Tier-2 Hub:** Non-UK sales (~17.1%) are heavily concentrated in a small cluster of Western European economies:
+  * **Netherlands (£284K, 3.2%)** and **EIRE / Ireland (£257K, 2.9%)** lead international volume.
+  * **Germany (£205K, 2.4%)** and **France (£184K, 2.1%)** represent stable, mature demand.
+  * Cross-continental markets like **Australia (£138K, 1.6%)** and **Japan (£37K, 0.4%)** show viable demand but remain niche.
+* **Strategic Implication (Operational & Logistics Focus):** 
+  * Over 93% of revenue is contained within the UK and neighboring Western Europe. Warehouse logistics, fulfillment SLAs, and localized freight contracts should strictly prioritize **UK-to-EU cross-border shipping corridors**.
+
+![Chart 17: Top 10 Countries by Revenue Contribution](images/chart_17_top_countries_revenue.png)
 
 ### **7. Customer Segmentation & Behavior: RFM Dynamics**
 
@@ -304,6 +319,20 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
 | **Potential Loyalists / New** | **£498K** (5.7%) | Low frequency (~1.0–1.2x); low-ticket items (Playing Cards, Bags). | **Nurture (Med):** Day-14/Day-25 onboarding journey with second-order incentives on core hero lines. |
 
 ---
+#### **Geographic Footprint Across RFM Segments: The International "Whale" Factor**
+
+Cross-analyzing geography against RFM tiers (*Chart 18*) uncovers critical strategic nuances behind customer locations:
+
+* **Universal UK Base (80%–92% across all segments):** Every customer segment is anchored domestically in the UK. However, international presence is **disproportionately concentrated in high-value cohorts**.
+* **High-Value International Whales in *Champions*:**
+  * While lower tiers (*Potential Loyalists*) are 92.2% UK-based, **nearly 20% of Champions revenue comes from outside the UK**.
+  * Specifically, **Netherlands (5.0%)**, **EIRE (4.5%)**, **Germany (2.5%)**, and **Australia (2.3%)** over-index heavily in the *Champions* tier. These are overseas wholesale accounts purchasing large order quantities.
+* **New Customer Acquisition in Germany:**
+  * In the *New Customers* segment, **Germany represents 10.6% of revenue**, signaling strong emerging international acquisition and market traction that warrants localized testing.
+
+![Chart 18: Country Revenue Mix Across RFM Segments](images/chart_18_country_mix_rfm.png)
+
+* **Key Takeaway for Account Management:** International retention efforts must not be treated as generic consumer marketing. Overseas accounts in the Netherlands, Ireland, and Germany are high-AOV wholesale buyers—they require dedicated B2B international shipping rates and customized VAT/tax invoicing workflows.
 
 #### **Actionable Recommendations**
 * **Standardize Operational Scheduling:** Consolidate marketing campaigns into a unified **Tuesday–Thursday morning window (09:30–11:00)** to intercept the universal 12:00–13:00 purchasing surge. Segment-specific scheduling adds complexity without data support.
