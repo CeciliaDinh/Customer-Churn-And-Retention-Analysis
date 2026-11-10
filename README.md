@@ -398,7 +398,7 @@ These markets demonstrate meaningful international wholesale purchasing activity
 
 Germany represents 10.6% of revenue within the New Customers segment, suggesting emerging international acquisition potential that warrants further investigation.
 
-![Country Mix Across RFM Segments](./images/chart_18_country_mix_rfm.png)
+![Country Mix Across RFM Segments](./images/18_country_revenue_by_rfm_segment.png)
 
 ### Actionable Recommendations
 
@@ -448,7 +448,7 @@ Non-UK revenue represents approximately 17.1% of total sales, with the largest i
 
 This geographic concentration suggests that logistics efficiency, fulfillment reliability, and cross-border shipping costs are important operational considerations.
 
-![Top Countries by Revenue](./images/chart_17_top_countries_revenue.png)
+![Top Countries by Revenue](./images/17_top_countries_by_revenue.png)
 
 ### Strategic Implications
 
