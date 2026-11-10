@@ -159,7 +159,7 @@ The analysis follows a growth-oriented framework, combining business performance
 * **Record Revenue Peak:** Monthly revenue climbed from **$562.7K (Jan)** to break the million-dollar barrier in October ($1.002M) before peaking at **$1.137M in November (+13.4% MoM)**.
 * **Q4 Growth Acceleration:** After range-bound performance between Feb–Aug ($442K–$659K), sales surged starting September ($938.8K), driven by seasonal holiday demand.
 
-![Chart 3: Monthly Revenue Trend, January–November 2011](images/chart_3_monthly_revenue_trend.png)
+![Chart 3: Monthly Revenue Trend, January–November 2011](images/03_monthly_revenue_trend_2011.png)
 
 ---
 
@@ -171,7 +171,7 @@ $$\text{Revenue} = \text{Active Customers} \times \text{Order Frequency} \times 
 * The customer base served as the core growth engine, expanding consistently from **739 active accounts in January to 1,660 in November (+124.6%)**.
 * Massive customer influx began in September (+34.9% MoM jump to 1,259 accounts), sustaining momentum through October (1,361) and November (1,660).
 
-![Chart 5: Monthly Active Customers, January–November 2011](images/chart_5_monthly_active_customers.png)
+![Chart 5: Monthly Active Customers, January–November 2011](images/05_monthly_active_customers_2011.png)
 
 #### **Secondary Driver: Late-Year Order Velocity & Purchase Frequency**
 * Purchase frequency reached an annual high of **1.59 orders/customer in November (+13.8% MoM)**.
@@ -181,7 +181,7 @@ $$\text{Revenue} = \text{Active Customers} \times \text{Order Frequency} \times 
 * Despite record top-line revenue in November, **AOV contracted sharply to $430.18 (-18.3% MoM)**.
 * *Business Insight:* High-velocity seasonal discounting (e.g., Black Friday) compressed individual basket sizes, but explosive order volume and repeat purchases easily outweighed the discount impact, maximizing total revenue.
 
-![Chart 4: Monthly AOV, Order Volume and Order Frequency with MoM Growth, January–November 2011](images/chart_4_monthly_aov_order_volume_frequency.png)
+![Chart 4: Monthly AOV, Order Volume and Order Frequency with MoM Growth, January–November 2011](images/04_monthly_performance_comparison.png)
 
 ---
 
