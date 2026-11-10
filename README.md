@@ -236,13 +236,29 @@ Analyzing monthly customer cohorts (*Chart 9*) resolves the apparent paradox bet
    * Do not wait for dormant accounts to passively return in November. Launch pre-season restocking outreach in **August–September** tailored to dormant accounts built up across H1.
 3. **VIP Loyalty & Tiered Volume Pricing for Core Accounts:**
    * Protect high-retention cohorts (e.g., `2010-12` maintaining ~35%–50% retention) with dedicated B2B account management, volume discounts, and early-access wholesale promotions.
-### 6.4 Product Affinity & Cross-Selling
+### ---
 
-- FP-Growth identified product associations with co-purchase strength exceeding 60%.
+### **6. Product Portfolio & ABC Classification: Hero SKUs Anchor Revenue**
 
-*Business Implications:*
-- Use frequently co-purchased products to design bundles and cross-selling recommendations.
-- Promote complementary products to increase product engagement and repeat purchasing.
+An ABC analysis of product performance (*Chart 10*) highlights the revenue structure across the product catalog and identifies key operational dependencies:
+
+* **Top-Heavy Revenue Drivers (The "Hero" Products):**
+  * Revenue among top performers drops precipitously: **SKU `23843` ($168K+)** and **SKU `22423` ($142K+)** substantially outpace the catalog, generating over **$310K combined**.
+  * Beyond the top 3 SKUs, revenue stabilizes rapidly into a steady baseline, with items ranked 7th to 20th generating between $35K and $55K each.
+* **Extensive Long-Tail Catalog:**
+  * The cumulative revenue curve (pink line) shows that the **Top 20 SKUs account for only ~14% of total cumulative revenue**, far below the traditional 80% Pareto threshold (dotted line).
+  * *Business Insight:* The business runs on a massive long-tail catalog. However, the top Class-A items serve as **Anchor Products** that wholesale and repeat buyers consistently return to replenish during peak periods.
+
+![Chart 10: SKU Revenue Contribution and ABC Classification — Top 20 Products](images/chart_10_top_sku_abc_classification.png)
+
+---
+
+### **💡 Supply Chain & Merchandising Recommendations**
+
+1. **Zero-Tolerance Stock-Outs on Top 5 SKUs:**
+   * Because top items (`23843`, `22423`, `85123A`) generate outsized revenue, stock-outs during Q4 peak weeks represent severe top-line vulnerability. Implement **automated safety-stock buffers** and advance procurement contracts by late Q3.
+2. **Leverage Anchor SKUs for Cross-Selling:**
+   * Bundle high-velocity Class-A products with slower-moving Class-B/C accessories to stimulate basket depth and counteract the AOV compression observed during year-end promotions.
 
 ---
 
