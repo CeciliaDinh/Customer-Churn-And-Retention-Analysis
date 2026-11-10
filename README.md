@@ -122,21 +122,29 @@ The analysis follows three stages, moving from business performance to customer 
 </div>
 <br>
 
-**Key Observations:**
-- **Overall Revenue multiplied ~4.7× (+368.9%)**, surging from **£567K** in **2010-Q4** to **£2.66M** in **2011-Q4** (+£2.09M net expansion).
-- Revenue accelerated consistently quarter-over-quarter: **£567K (2010-Q4) → £1.59M (2011-Q1) → £1.77M (2011-Q2) → £2.17M (2011-Q3) → £2.66M (2011-Q4)**.
-- **Total Orders placed** expanded dramatically by **+281.7%** (from **1,394** to **5,321** orders).
-- The multiplicative log-decomposition indicates that revenue growth was driven by:
-    1. **Purchasing Customer Base Expansion was the primary engine**, contributing **68.8%** to total revenue growth as active buyer volume surged **+189.5%** (from **884** to **2,559** customers).
-    2. **Higher Order Frequency** contributed **17.9%**, improving from **1.58** to **2.08** orders/customer (**+31.9%**).
-    3. **Average Order Value (AOV)** expansion contributed **13.3%**, lifting from **£407.10** to **£500.10** (**+22.8%**), supported by a **+29.7%** increase in average items per basket.
+Revenue grew aggressively throughout 2011, rising from ~$565K in 2010-Q4 to $2.65M in 2011-Q4 (+369% YoY). Growth accelerated sharply in Q1 (+181% QoQ) and remained strong in Q4 (+22.4% QoQ).
 
-*Business Implications:*
-- Top-line scale is heavily volume-dependent; sustained top-line momentum requires maintaining healthy top-of-funnel customer acquisition while building structural retention loops.
-- Improving order velocity (2.08) and basket size indicates expanding wallet share among active buyers, presenting immediate cross-selling and bundling opportunities.
+To understand the underlying drivers, revenue was decomposed into:
 
----
+[
+Revenue = Customers \times Purchase\ Frequency \times AOV
+]
 
+Key Growth Drivers
+
+Q1 2011 – Acquisition-led growth: Revenue surged +181%, supported by a 100.7% increase in active customers (884 → 1,774), a 19.2% increase in AOV ($405 → $483), and a 31.1% increase in average items per order.
+
+Q4 2011 – Customer-base expansion: Revenue increased +22.4% QoQ, alongside an 18.7% increase in active customers (2,155 → 2,559). However, AOV remained flat (-0.5%), while average items per order declined by 4.3%.
+
+Business Implications
+
+Acquisition: Sustain customer acquisition while identifying high-potential customer profiles.
+
+Growth: Explore cross-selling and basket expansion opportunities to increase existing customer value.
+
+Retention: Strengthen repeat-purchase strategies to convert newly acquired buyers into long-term customers and reduce customer attrition.
+
+Key Takeaway: Revenue growth was increasingly supported by customer-base expansion. The next strategic priority is to translate acquisition momentum into sustainable customer value through repeat purchases, basket expansion and retention.
 ### 6.2 Customer Acquisition & Early Engagement
 
 - Approximately 30% of customers disengaged after only one or two purchases.
