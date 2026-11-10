@@ -148,44 +148,40 @@ The analysis follows a growth-oriented framework, combining business performance
 
 ### 6.1 Revenue Growth & Performance Drivers
 
-<div align="center">
-  <img src="./images/quarterly_revenue_trend.png" alt="Quarterly Revenue Trend" width="100%">
-  <br><br>
-  <img src="./images/revenue_growth_drivers.png" alt="Revenue Growth Driver Decomposition" width="100%">
-</div>
-<br>
+# 📈 Revenue Growth & Performance Drivers
 
-Revenue grew aggressively throughout 2011, rising from ~$565K in 2010-Q4 to $2.65M in 2011-Q4 (+369% YoY). Growth accelerated sharply in Q1 (+181% QoQ) and remained strong in Q4 (+22.4% QoQ).
+> **Executive Summary:** Revenue demonstrated a two-phase trajectory throughout 2011: a stable baseline across H1 followed by a massive late-year inflection. Top-line expansion was overwhelmingly driven by **Customer Base Acquisition** and **late-year purchase frequency**, successfully offsetting compressed basket sizes during holiday promotions.
 
-To understand the underlying drivers, revenue was decomposed into:
+---
 
+### **1. Top-Line Trajectory: Mid-Year Plateau to Q4 Inflexion**
 
-Revenue = Customers X Purchase Frequency X AOV
+* **Record Revenue Peak:** Monthly revenue climbed from **$562.7K (Jan)** to break the million-dollar barrier in October ($1.002M) before peaking at **$1.137M in November (+13.4% MoM)**.
+* **Q4 Growth Acceleration:** After range-bound performance between Feb–Aug ($442K–$659K), sales surged starting September ($938.8K), driven by seasonal holiday demand.
 
-Key Growth Drivers
+![Chart 3: Monthly Revenue Trend, January–November 2011](images/chart_3_monthly_revenue_trend.png)
 
-Q1 2011 – Acquisition-led growth: Revenue surged +181%, supported by a 100.7% increase in active customers (884 → 1,774), a 19.2% increase in AOV ($405 → $483), and a 31.1% increase in average items per order.
+---
 
-Q4 2011 – Customer-base expansion: Revenue increased +22.4% QoQ, alongside an 18.7% increase in active customers (2,155 → 2,559). However, AOV remained flat (-0.5%), while average items per order declined by 4.3%.
+### **2. Revenue Driver Decomposition: What Powered the Surge?**
 
-Business Implications
+$$\text{Revenue} = \text{Active Customers} \times \text{Order Frequency} \times \text{Average Order Value (AOV)}$$
 
-Acquisition: Sustain customer acquisition while identifying high-potential customer profiles.
+#### **Primary Driver: Customer Acquisition Expansion (+125% YTD)**
+* The customer base served as the core growth engine, expanding consistently from **739 active accounts in January to 1,660 in November (+124.6%)**.
+* Massive customer influx began in September (+34.9% MoM jump to 1,259 accounts), sustaining momentum through October (1,361) and November (1,660).
 
-Growth: Explore cross-selling and basket expansion opportunities to increase existing customer value.
+![Chart 5: Monthly Active Customers, January–November 2011](images/chart_5_monthly_active_customers.png)
 
-Retention: Strengthen repeat-purchase strategies to convert newly acquired buyers into long-term customers and reduce customer attrition.
+#### **Secondary Driver: Late-Year Order Velocity & Purchase Frequency**
+* Purchase frequency reached an annual high of **1.59 orders/customer in November (+13.8% MoM)**.
+* Total order volume surged to **2,642 orders in November (+38.8% MoM)**, driving transaction velocity to record levels.
 
-Key Takeaway: Revenue growth was increasingly supported by customer-base expansion. The next strategic priority is to translate acquisition momentum into sustainable customer value through repeat purchases, basket expansion and retention.
-### 6.2 Customer Acquisition & Early Engagement
+#### **Commercial Trade-off: Volume Elasticity vs. Basket Size (AOV)**
+* Despite record top-line revenue in November, **AOV contracted sharply to $430.18 (-18.3% MoM)**.
+* *Business Insight:* High-velocity seasonal discounting (e.g., Black Friday) compressed individual basket sizes, but explosive order volume and repeat purchases easily outweighed the discount impact, maximizing total revenue.
 
-- Approximately 30% of customers disengaged after only one or two purchases.
-- Around 20% of new customers showed a preference for premium home décor products in Q3.
-
-*Business Implications:*
-- Strengthen onboarding and post-purchase engagement.
-- Encourage second purchases through relevant product recommendations.
-- Explore targeted acquisition based on promising customer and product profiles.
+![Chart 4: Monthly AOV, Order Volume and Order Frequency with MoM Growth, January–November 2011](images/chart_4_monthly_aov_order_volume_frequency.png)
 
 ---
 
