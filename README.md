@@ -159,9 +159,8 @@ Revenue grew aggressively throughout 2011, rising from ~$565K in 2010-Q4 to $2.6
 
 To understand the underlying drivers, revenue was decomposed into:
 
-[
-Revenue = Customers \times Purchase\ Frequency \times AOV
-]
+
+Revenue = Customers X Purchase Frequency X AOV
 
 Key Growth Drivers
 
