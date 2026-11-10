@@ -82,25 +82,58 @@ The dataset does not contain an explicit churn label. This rule-based definition
 </details>
 
 <details>
+<summary><strong> <details>
 <summary><strong>5. Analytical Approach</strong></summary>
 
-The analysis follows three stages, moving from business performance to customer behavior and churn prediction.
+The analysis follows a growth-oriented framework, combining business performance diagnosis, the 3Ps analytical dimensions, and customer lifecycle analysis to identify opportunities for sustainable revenue growth.
 
-**5.1 Revenue & Purchasing Performance**
+### **5.1 Growth Diagnosis**
 
-- Analyze revenue and order trends over time.
-- Examine changes in customer activity and average order value.
-- Identify periods of strong growth and potential changes in purchasing behavior.
+- Analyze revenue, customer, and order trends over time.
+- Decompose revenue growth into customer base, purchase frequency, and average order value (AOV).
+- Identify key growth drivers, performance changes, and seasonal patterns.
 
-**5.2 Customer Behavior & Segmentation**
+### **5.2 3Ps Analysis**
 
-- Segment customers based on purchasing value and behavioral patterns.
-- Analyze customer cohorts and repeat-purchase behavior.
-- Compare purchasing patterns between retained and churned customers.
-- Examine product preferences, purchase frequency, and cancellation behavior.
-- Identify early signs of customer disengagement.
+**Product**
 
-**5.3 Churn Prediction**
+- Analyze revenue and sales contribution by product, category, and subcategory.
+- Identify top-performing products and customer product preferences.
+- Examine product affinity and cross-selling opportunities.
+
+**Place**
+
+- Analyze revenue, order, and customer distribution across geographic markets.
+- Compare purchasing patterns and customer value across locations.
+- Identify high-potential markets and geographic growth opportunities.
+
+**People**
+
+- Segment customers based on purchasing behavior and monetary value.
+- Identify high-value, low-engagement, and at-risk customer segments.
+- Compare purchasing patterns and product preferences across customer groups.
+
+### **5.3 Customer Lifecycle Analysis**
+
+**Acquire**
+
+- Analyze new customer trends and first-purchase behavior.
+- Identify customer acquisition patterns across products and locations.
+- Examine early repeat-purchase signals.
+
+**Engage & Develop**
+
+- Analyze repeat-purchase behavior, purchase frequency, and spending patterns.
+- Identify opportunities to increase customer value through basket expansion and cross-selling.
+- Examine differences in purchasing behavior across customer segments.
+
+**Retain**
+
+- Analyze cohort retention, customer inactivity, and churn patterns.
+- Identify behavioral signals associated with customer disengagement.
+- Evaluate customer segments with elevated churn risk.
+
+### **5.4 Churn Prediction**
 
 - Construct customer-level RFM and cancellation-related features.
 - Define churn using a behavioral rule based on recency and frequency.
