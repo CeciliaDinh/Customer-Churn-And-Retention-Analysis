@@ -184,20 +184,58 @@ $$\text{Revenue} = \text{Active Customers} \times \text{Order Frequency} \times 
 ![Chart 4: Monthly AOV, Order Volume and Order Frequency with MoM Growth, January–November 2011](images/04_monthly_performance_comparison.png)
 
 ---
+### 6. Customer Behavior: How to attract, engage and retain our customers? Any opportunities to increase monetary value from existing customer bases? 
 
-### 6.3 Customer Retention & Churn Behavior
+A deeper drill-down into customer cohorts reveals a critical strategic pivot: **top-line growth was sustained by Customer Retention, not new acquisitions.**
 
-- Customers with no repeat purchase within 30 days showed approximately 3× higher churn risk.
-- Customers purchasing only one product had a churn rate of approximately 71%.
-- Broader product engagement was associated with lower churn risk.
+* **The Flipped Ratio:** While January was driven primarily by first-time buyers (**56% New vs. 44% Returning**), the balance rapidly shifted. From May onward, returning customers consistently made up **70%–80%+** of monthly active buyers.
+* **November Re-engagement Wave:** At the record revenue peak in November, **81% of active buyers were Returning Customers** (only 19% new). The year-end surge was therefore an engine of **lifecycle reactivation** rather than high-cost new customer acquisition.
 
-*Business Implications:*
-- Prioritize early re-engagement before customers become inactive.
-- Encourage product discovery and cross-selling.
-- Monitor customers with limited purchasing history as an early-warning segment.
+![Chart 5: Monthly Customer Composition: New vs. Returning Customers](images/chart_5_customer_composition.png)
 
 ---
 
+### **4. Purchasing Behavior: Strong B2B / Working-Hours Footprint**
+
+Analysis of purchase distribution across days and hours highlights distinctive behavioral patterns resembling **B2B buyers, wholesalers, or office-hour shoppers**:
+
+* **Strict Working-Hour Concentration:** Transaction activity is heavily clustered between **10:00 and 15:00 (Monday–Friday)**, with daily peaks consistently occurring around **12:00–13:00 (3.0%–3.3% share per hour slot)**.
+* **Zero Saturday Activity & Late-Night Thursday:** 
+  * Orders on **Saturdays are completely non-existent (0.0%)**, and Sundays only capture minimal daytime activity (10:00–16:00).
+  * **Thursday** is the sole day featuring extended evening purchasing (persisting until 19:00–20:00).
+* **November Mid-Week Stocking (Peak Season):** In November, purchase volume concentrated even more intensely on **Tuesday & Wednesday mid-day (12:00–13:00 capturing ~3.2% of all monthly orders)**, pointing to deliberate mid-week inventory replenishment ahead of weekend retail demand.
+
+![Chart 6: Purchase Day & Hour Distribution, January–November 2011](images/chart_6_heatmap_all_year.png)
+
+![Chart 7: Purchase Day & Hour Distribution, November 2011](images/chart_7_heatmap_november.png)
+---
+---
+
+### **5. Cohort Retention Analysis: The Leaky Bucket vs. The Sleeping Giants**
+
+Analyzing monthly customer cohorts (*Chart 9*) resolves the apparent paradox between low monthly cohort retention and the 81% returning customer share:
+
+* **The Month-1 Drop-off (The Leaky Bucket):** All 2011 cohorts experience an immediate, steep churn after acquisition—**only 15%–24% of new customers place a second order in Month 1**. 
+* **Stable Baseline Retention (Month 2+):** For customers surviving past Month 2, retention stabilizes remarkably well into a predictable baseline of **20%–27%**, indicating high stickiness among core converted buyers.
+* **The Holiday Reactivation Wave (The Sleeping Giants):** Rather than churning permanently, dormant customers re-activate en masse during the year-end season:
+  * Cohort `2010-12` spiked back to an extraordinary **50% retention in Month 11** (November).
+  * Cohorts `2011-01` and `2011-06` rebounded to **37% and 33% retention**, respectively.
+* **The Cumulative Pool Reality:** Because 11 historical cohorts re-engaged simultaneously in November, their aggregated volume formed **81% of active buyers**, dwarfing that single month's acquisition intake.
+
+![Chart 9: Monthly Customer Cohort Retention](images/chart_9_cohort_retention.png)
+
+---
+
+### **💡 Strategic Recommendations: Retain vs. Acquire**
+
+> **Strategic Priority:** Shift resource allocation to **70% Retention & Lifecycle Marketing / 30% Targeted Acquisition**. Pouring budget into top-of-funnel acquisition while losing 80% of buyers within 30 days is commercially inefficient.
+
+1. **Plug the "Month-1 Drop-off" (0–30 Days Post-Purchase):**
+   * Implement automated post-purchase CRM triggers at **Day 14 and Day 25** offering a time-sensitive incentive for the **second order**. Securing order #2 is the single biggest predictor of long-term LTV.
+2. **Systematize Reactivation Ahead of Q4:**
+   * Do not wait for dormant accounts to passively return in November. Launch pre-season restocking outreach in **August–September** tailored to dormant accounts built up across H1.
+3. **VIP Loyalty & Tiered Volume Pricing for Core Accounts:**
+   * Protect high-retention cohorts (e.g., `2010-12` maintaining ~35%–50% retention) with dedicated B2B account management, volume discounts, and early-access wholesale promotions.
 ### 6.4 Product Affinity & Cross-Selling
 
 - FP-Growth identified product associations with co-purchase strength exceeding 60%.
