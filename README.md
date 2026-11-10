@@ -261,7 +261,53 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
    * Bundle high-velocity Class-A products with slower-moving Class-B/C accessories to stimulate basket depth and counteract the AOV compression observed during year-end promotions.
 
 ---
+---
 
+### **7. Customer Segmentation & Behavior: RFM Dynamics**
+
+> **Executive Summary:** Top-line revenue exhibits extreme concentration risk: **Champions generate 64.7% (£5.66M) of total revenue**. Segment differences stem from **order cadence and basket depth, not product preference**—mature and lapsing segments purchase the exact same hero products.
+
+---
+
+#### **Key Takeaways & Cross-Chart Insights**
+
+1. **Extreme Revenue Concentration (The "Whale" Dependency):**
+   * **Champions account for £5.66M (64.7%)**, outpacing the second segment (*Loyal*, 10.5%) by 6x.
+   * *Strategic Risk:* A 10% churn in Champions (~£566K) wipes out more revenue than the entire *Hibernating* base (£495K).
+   * *The £1.48M Win-back Opportunity:* Lapsing pools (*At Risk* £828K + *Hibernating* £495K + *Need Attention* £155K) represent **17.0% of total revenue**.
+
+![Chart 13: Revenue Contribution by RFM Customer Segment](images/chart_13_rfm_revenue_contribution.png)
+
+2. **Intensity vs. Taste (Identical Catalogs, Divergent Velocities):**
+   * Top products (*Heart T-Light Holder, Regency Cakestand, Party Bunting*) rank top-5 across *Champions, Loyal, At Risk,* and *Hibernating*. 
+   * Lapsed customers do not suffer from product mismatch; they simply stop reordering. Champions buy their core items **~3x per customer** (vs. 1.0–2.0x for other cohorts) and order with larger basket depth (e.g., Cakestand at £112/invoice for Champions vs. £33–£60 elsewhere).
+   * *Wholesale Signal:* *At Risk* purchases Heart Holders at **25.2 units/invoice** (vs. Champions' 21.7), signaling inactive high-volume trade buyers.
+
+3. **Uniform Mid-Week/Mid-Day B2B Rhythm:**
+   * **No segment-level timing divergence:** All mature cohorts peak mid-day (**12:00–13:00 at 16%–18%**) and concentrate orders mid-week (**Tuesday–Thursday, peaking Thursday at 21%–24%**). 
+   * *Data Caveat:* The Tuesday spike (32%) and 14:00 peak for *New Customers* is a low-sample window artifact (n < 8 invoices/SKU)—not an intrinsic consumer habit.
+
+| Purchase Day Distribution | Hourly Purchase Distribution |
+| :---: | :---: |
+| ![Chart 14: Weekday Distribution by RFM Segment](images/chart_14_weekday_rfm_distribution.png) | ![Chart 15: Hourly Distribution by RFM Segment](images/chart_15_hourly_rfm_distribution.png) |
+
+---
+
+#### **Segment Strategic Action Matrix**
+
+| Segment | Revenue (% Share) | Core Behavior & Hero Products | Action Plan & Timing |
+| :--- | :---: | :--- | :--- |
+| **Champions** | **£5.66M** (64.7%) | Reorder ~3x; High basket (£112/inv on Cakestand). *Heart Holder, Cakestand, Jumbo Bag.* | **Protect (High):** Assign dedicated VIP account managers, volume tiers, and automated alerts on recency drift. |
+| **At Risk** | **£828K** (9.5%) | High units/invoice (25.2 units on Heart Holder). B2B wholesale profile. | **Reactivate (High):** Automated volume-pricing win-back nudges for their previously purchased hero items. |
+| **Loyal** | **£914K** (10.5%) | Steady reorders (~2x); flatter weekday profile across Tue–Thu. | **Upsell (High):** Automated replenishment cycles and multi-pack bundles to push cadence toward Champions. |
+| **Hibernating / Need Attention** | **£650K** (7.5%) | Single-purchase behavior (~1.0x); sharp Thursday peak (~24%). | **Automate (Med):** Low-cost automated email reactivation featuring top proven catalog items; cap ad spend. |
+| **Potential Loyalists / New** | **£498K** (5.7%) | Low frequency (~1.0–1.2x); low-ticket items (Playing Cards, Bags). | **Nurture (Med):** Day-14/Day-25 onboarding journey with second-order incentives on core hero lines. |
+
+---
+
+#### **Actionable Recommendations**
+* **Standardize Operational Scheduling:** Consolidate marketing campaigns into a unified **Tuesday–Thursday morning window (09:30–11:00)** to intercept the universal 12:00–13:00 purchasing surge. Segment-specific scheduling adds complexity without data support.
+* **Prioritize Cadence Over Discovery:** Win-back strategies should leverage proven anchor products (*Heart Holder, Cakestand*) via volume discounts and replenishment reminders, rather than pushing new catalog exploration.
 ### 6.5 Churn Prediction Performance
 
 - LightGBM achieved an ROC-AUC of **0.77** using Out-of-Time validation.
