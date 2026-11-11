@@ -13,25 +13,11 @@ This project analyzes customer purchasing behavior, revenue performance, custome
 
 The analysis combines PySpark-based data processing, exploratory data analysis (EDA), RFM segmentation, cohort analysis, and machine learning to uncover revenue growth drivers, identify valuable customer segments, and develop data-driven retention strategies.
 
-**Key Analytical Areas**
-- Revenue growth and performance driver decomposition.
-- Customer acquisition, retention, and purchasing behavior.
-- Cohort retention and customer lifecycle analysis.
-- RFM-based customer segmentation.
-- Product portfolio and geographic revenue analysis.
-- Churn prediction using LightGBM and SHAP.
-
-</details>
-
 <details>
 <summary><strong>2. Business Objectives</strong></summary>
-
-- Evaluate revenue growth and purchasing performance.
-- Identify high-value customer segments and their purchasing patterns.
-- Understand customer retention and churn behavior.
-- Identify behavioral signals associated with customer disengagement.
-- Develop a churn prediction model to prioritize at-risk customers.
-- Translate analytical findings into actionable growth and retention strategies.
+- Define key metrics to monitor business performance, identify the key revenue drivers. 
+- Describe the portraits of our users. Who are they, what is their location, what's their favorite line of products, and time to buy. 
+- Identify characteristics of customer segments, which segment has the highest retention rate MoM, and why is that? Anything we can do to attract new custoomers, increase order frequency for old users/ dormant and retain churn. 
 
 </details>
 
