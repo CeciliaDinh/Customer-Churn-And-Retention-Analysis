@@ -1,37 +1,33 @@
 # Customer Growth and Retention Analysis
 
 <div align="center">
-
-  <img src="./images/churn_prediction.png" alt="Customer Growth and Retention Analysis Banner" width="100%">
-
+  <img src="./images/churn_prediction.png" alt="Customer Growth and Retention Analysis Banner" width="100%">
 </div>
 
 **Author:** Dinh Thi Thanh Hang
 
 <details open>
-
 <summary><strong>1. Project Overview</strong></summary>
 
-This project analyzes customer purchasing behavior, revenue performance, customer segmentation, and churn risk using 500,000+ transaction records from a UK-based online retailer.
+This project analyzes customer purchasing behavior, revenue performance, and churn risk using 500,000+ transaction records from a UK-based online retailer.
 
-The analysis combines PySpark-based data processing, exploratory data analysis (EDA), RFM segmentation, cohort analysis, and machine learning to uncover revenue growth drivers, identify valuable customer segments, and develop data-driven retention strategies.
+The analysis combines PySpark-based data processing, customer segmentation, behavioral analysis, and machine learning to identify growth opportunities and support data-driven customer retention strategies.
+
+</details>
 
 <details>
-
 <summary><strong>2. Business Objectives</strong></summary>
 
-- Define key metrics to monitor business performance, identify the key revenue drivers.
-
-- Describe customer profiles, including their locations, product preferences, and purchasing times.
-
-- Identify customer segments with the strongest month-over-month retention, understand the drivers behind their behavior, and find opportunities to acquire new customers, increase purchase frequency, reactivate dormant customers, and reduce churn.
-
-</details>
+- Evaluate revenue growth and purchasing performance.
+- Identify high-value customer segments and their purchasing patterns.
+- Understand customer retention and churn behavior.
+- Identify behavioral signals associated with customer disengagement.
+- Develop a churn prediction model to prioritize at-risk customers.
+- Translate analytical findings into actionable growth and retention strategies.
 
 </details>
 
 <details>
-
 <summary><strong>3. Dataset Overview</strong></summary>
 
 The dataset contains transactional records from a UK-based online retailer between December 2010 and December 2011.
@@ -43,6 +39,7 @@ The dataset contains transactional records from a UK-based online retailer betwe
 | Business Context | Online Retail |
 | Geographic Coverage | Primarily United Kingdom |
 | Identified Customers | 4,334 |
+
 **Key Fields**
 
 | Field | Description |
@@ -55,10 +52,10 @@ The dataset contains transactional records from a UK-based online retailer betwe
 | `UnitPrice` | Product unit price |
 | `CustomerID` | Customer identifier |
 | `Country` | Customer location |
+
 </details>
 
 <details>
-
 <summary><strong>4. Key Business Metrics & Definitions</strong></summary>
 
 | Metric | Definition |
@@ -72,12 +69,11 @@ The dataset contains transactional records from a UK-based online retailer betwe
 | Monetary Value | Total historical purchase value per customer |
 | Cancellation Rate | Cancelled invoices relative to total purchase and cancellation activity |
 | Churn | Customer inactivity and purchasing frequency-based behavioral proxy |
+
 **Operational Churn Definition**
 
 ```text
-
 Churn = 1 if Recency > 108 days AND Frequency <= 4
-
 Churn = 0 otherwise
 ```
 
@@ -85,495 +81,252 @@ The dataset does not contain an explicit churn label. This rule-based definition
 
 </details>
 
-## Analytical Approach
+<details>
+<summary><strong>5. Analytical Approach</strong></summary>
 
-The analysis follows a growth-oriented framework combining business performance diagnosis, the 3Ps, customer lifecycle analysis, and churn prediction.
+The analysis follows a growth-oriented framework, combining business performance diagnosis, the 3Ps analytical dimensions, and customer lifecycle analysis to identify opportunities for sustainable revenue growth.
 
-**Growth diagnosis**
+### **5.1 Growth Diagnosis**
 
-- Track revenue, customer, and order trends over time.
-
-- Decompose revenue growth into active customers, purchase frequency, and average order value (AOV).
-
+- Analyze revenue, customer, and order trends over time.
+- Decompose revenue growth into customer base, purchase frequency, and average order value (AOV).
 - Identify key growth drivers, performance changes, and seasonal patterns.
 
-**3Ps analysis**
+### **5.2 3Ps Analysis**
 
-- **Product:** Evaluate product and SKU contribution, customer preferences, product affinity, and cross-selling opportunities.
+**Product**
 
-- **Place:** Compare revenue, orders, and customer value across geographic markets.
+- Analyze revenue and sales contribution by product, category, and subcategory.
+- Identify top-performing products and customer product preferences.
+- Examine product affinity and cross-selling opportunities.
 
-- **People:** Segment customers by purchasing behavior and monetary value; identify high-value, low-engagement, and at-risk groups.
+**Place**
 
-**Customer lifecycle analysis**
+- Analyze revenue, order, and customer distribution across geographic markets.
+- Compare purchasing patterns and customer value across locations.
+- Identify high-potential markets and geographic growth opportunities.
 
-- **Acquire:** Examine new-customer trends, first purchases, and early repeat-purchase signals.
+**People**
 
-- **Engage & develop:** Analyze repeat purchases, purchase frequency, spending patterns, and basket-expansion opportunities.
+- Segment customers based on purchasing behavior and monetary value.
+- Identify high-value, low-engagement, and at-risk customer segments.
+- Compare purchasing patterns and product preferences across customer groups.
 
-- **Retain:** Evaluate cohort retention, inactivity, churn patterns, and reactivation opportunities.
+### **5.3 Customer Lifecycle Analysis**
 
-**Churn prediction**
+**Acquire**
+
+- Analyze new customer trends and first-purchase behavior.
+- Identify customer acquisition patterns across products and locations.
+- Examine early repeat-purchase signals.
+
+**Engage & Develop**
+
+- Analyze repeat-purchase behavior, purchase frequency, and spending patterns.
+- Identify opportunities to increase customer value through basket expansion and cross-selling.
+- Examine differences in purchasing behavior across customer segments.
+
+**Retain**
+
+- Analyze cohort retention, customer inactivity, and churn patterns.
+- Identify behavioral signals associated with customer disengagement.
+- Evaluate customer segments with elevated churn risk.
+
+### **5.4 Churn Prediction**
 
 - Construct customer-level RFM and cancellation-related features.
+- Define churn using a behavioral rule based on recency and frequency.
+- Benchmark Logistic Regression, Random Forest, and LightGBM.
+- Apply Out-of-Time validation to evaluate performance on unseen periods.
+- Use SHAP to interpret important churn predictors.
 
-- Define churn using the documented recency-and-frequency behavioral proxy.
-
-- Benchmark classification models, evaluate with out-of-time validation, and interpret predictors using SHAP.
-
----
-
-# 5. Key Business Insights
+</details>
 
 <details open>
+<summary><strong>6. Key Findings & Business Recommendations</strong></summary>
 
-<summary><strong>5.1. Revenue Growth & Performance Drivers</strong></summary>
+### 6.1 Revenue Growth & Performance Drivers
 
-### Executive Summary
+# 📈 Revenue Growth & Performance Drivers
 
-Revenue demonstrated a two-phase trajectory throughout 2011: a relatively stable baseline across the first half, followed by a substantial late-year acceleration.
-
-Revenue expansion was primarily supported by a growing active customer base and increased purchase frequency, offsetting the decline in average order value during the peak season.
-
-**1. Top-Line Trajectory: Mid-Year Plateau to Q4 Acceleration**
-
-- **Record Revenue Peak:** Monthly revenue increased from approximately £562.7K in January to £1.002M in October, before peaking at £1.137M in November (+13.4% MoM).
-
-- **Q4 Growth Acceleration:** Following relatively stable monthly performance between February and August (£442K–£659K), revenue accelerated significantly from September (£938.8K).
-
-![Monthly Revenue Trend](./images/03_monthly_revenue_trend_2011.png)
-
-**2. Revenue Driver Decomposition: What Powered the Surge?**
-
-Revenue can be decomposed into three fundamental drivers:
-
-\[
-
-Revenue = Active\ Customers \times Order\ Frequency \times AOV
-
-\]
-
-**Primary Driver: Active Customer Growth (+125% YTD)**
-
-The active customer base expanded from 739 customers in January to 1,660 in November (+124.6%).
-
-- Customer growth accelerated in September, with a 34.9% MoM increase to 1,259 customers.
-
-- The upward trend continued through October (1,361) and November (1,660).
-
-![Monthly Active Customers](./images/05_monthly_active_customers_2011.png)
-
-**Secondary Driver: Increased Purchase Frequency**
-
-- Purchase frequency reached an annual high of 1.59 orders/customer in November (+13.8% MoM).
-
-- Total order volume surged to 2,642 orders (+38.8% MoM), driving transaction velocity to record levels.
-
-**Commercial Trade-off: Volume Growth vs. Basket Size**
-
-Despite reaching record revenue in November, AOV contracted to £430.18 (-18.3% MoM).
-
-**Business Insight:** The simultaneous increase in order volume and decline in AOV suggests a volume-driven growth pattern. Seasonal promotions and increased purchasing activity may have encouraged more frequent transactions while compressing individual basket values.
-
-![Monthly Performance Comparison](./images/04_monthly_performance_comparison.png)
-
-</details>
-
-<details>
-
-<summary><strong>5.2. Customer Acquisition vs. Retention</strong></summary>
-
-### Executive Summary
-
-The late-year revenue surge was sustained primarily by returning customers rather than new customer acquisition.
-
-**The Shift from Acquisition to Retention**
-
-- In January, first-time buyers accounted for 56% of active customers, compared with 44% returning customers.
-
-- From May onward, returning customers consistently represented approximately 70%–80%+ of monthly active buyers.
-
-- In November, returning customers accounted for 81% of active buyers, while new customers represented only 19%.
-
-**Business Insight:** The year-end growth was largely driven by the re-engagement of existing customers and accumulated customer relationships, rather than new customer acquisition alone.
-
-This highlights the importance of lifecycle marketing and customer retention in sustaining revenue growth.
-
-![New vs Returning Customers](./images/06_new_vs_returning_customers.png)
-
-</details>
-
-<details>
-
-<summary><strong>5.3. Purchasing Behavior: B2B / Working-Hours Footprint</strong></summary>
-
-Analysis of purchasing activity across weekdays and hours reveals distinctive behavioral patterns resembling B2B buyers, wholesalers, or office-hour shoppers.
-
-**Working-Hour Concentration**
-
-- Transaction activity is heavily concentrated between 10:00 and 15:00, particularly from Monday to Friday.
-
-- Daily purchasing peaks consistently occur around 12:00–13:00, accounting for approximately 3.0%–3.3% of hourly transaction activity.
-
-**Distinctive Weekly Patterns**
-
-- Saturday transactions are completely absent in the observed dataset.
-
-- Sunday activity is limited primarily to daytime hours (10:00–16:00).
-
-- Thursday is the only weekday with extended evening purchasing activity, continuing until approximately 19:00–20:00.
-
-**November Mid-Week Purchasing**
-
-During November, purchasing activity became even more concentrated around Tuesday and Wednesday midday, with 12:00–13:00 accounting for approximately 3.2% of monthly orders.
-
-**Business Insight:** The consistent weekday and midday purchasing patterns suggest a substantial business-oriented customer base. This may indicate wholesale purchasing and inventory replenishment behavior rather than purely individual consumer shopping.
-
-![Purchase Time Heatmap](./images/07_purchase_time_heatmap_november_2011.png)
-
-</details>
-
-<details>
-
-<summary><strong>5.4. Cohort Retention Analysis: The Leaky Bucket vs. Sleeping Giants</strong></summary>
-
-### Executive Summary
-
-Cohort analysis reveals an important distinction between monthly customer retention and the cumulative returning customer base.
-
-Although individual acquisition cohorts experience substantial early drop-off, customers from older cohorts can return after extended periods of inactivity.
-
-**1. The Month-1 Drop-off**
-
-All observed 2011 acquisition cohorts experience a significant decline in the first month after acquisition.
-
-- Only 15%–24% of newly acquired customers place a second order in Month 1.
-
-- This indicates a substantial opportunity to improve early customer engagement and encourage repeat purchases.
-
-**2. Stable Baseline Retention**
-
-For customers who remain engaged beyond the initial period, retention stabilizes at approximately 20%–27% across subsequent cohort months.
-
-This suggests that customers who successfully transition into repeat purchasing behavior may develop relatively consistent purchasing patterns.
-
-**3. The Holiday Reactivation Wave**
-
-Dormant customers from earlier cohorts re-engaged during the year-end season:
-
-- December 2010 cohort reached approximately 50% retention in Month 11.
-
-- January 2011 cohort rebounded to 37%.
-
-- June 2011 cohort rebounded to 33%.
-
-**4. The Cumulative Customer Base Effect**
-
-The 81% returning customer share observed in November is not inconsistent with low monthly cohort retention.
-
-Returning customers include buyers acquired across multiple historical cohorts. Their simultaneous reactivation creates a substantial pool of returning demand, even when individual cohorts have relatively low month-to-month retention.
-
-**Business Insight:** Customer inactivity should not automatically be interpreted as permanent churn. Historical purchasing behavior suggests that some dormant customers retain the potential to reactivate, particularly during seasonal demand periods.
-
-![Cohort Retention Analysis](./images/09_cohort_retention.png)
-
-### Strategic Recommendations: Retain vs. Acquire
-
-**Priority 1: Address the Month-1 Drop-off**
-
-Implement automated post-purchase CRM triggers:
-
-- Day 14: Personalized product recommendations based on the first purchase.
-
-- Day 25: Time-sensitive incentives to encourage a second purchase.
-
-The objective is to convert first-time buyers into repeat customers before engagement declines.
-
-**Priority 2: Systematize Seasonal Reactivation**
-
-Launch pre-season reactivation campaigns in August–September rather than waiting for dormant customers to return organically in November.
-
-Prioritize customers with historical purchasing activity during previous peak seasons.
-
-**Priority 3: Protect High-Value Customers**
-
-Introduce loyalty initiatives for established repeat buyers:
-
-- Dedicated account management for high-value wholesale customers.
-
-- Tiered volume discounts.
-
-- Early access to seasonal and wholesale promotions.
-
-- Automated alerts when purchasing recency begins to deteriorate.
-
-</details>
-
-<details>
-
-<summary><strong>5.5. Product Portfolio Analysis & ABC Classification</strong></summary>
-
-### Executive Summary
-
-ABC analysis highlights a highly diversified product catalog with a relatively small number of high-performing SKUs generating substantial individual revenue contributions.
-
-**1. Top-Performing Products**
-
-Revenue among leading products drops sharply:
-
-- SKU 23843 generates more than £168K.
-
-- SKU 22423 generates more than £142K.
-
-- Together, these two products contribute over £310K in revenue.
-
-Beyond the top three SKUs, revenue stabilizes relatively quickly, with products ranked 7th–20th generating approximately £35K–£55K each.
-
-**2. Extensive Long-Tail Catalog**
-
-The cumulative revenue curve indicates that the Top 20 SKUs account for approximately 14% of total revenue, substantially below the traditional 80% Pareto threshold.
-
-**Business Insight:** Revenue is distributed across a broad product catalog rather than being concentrated exclusively in a small number of SKUs.
-
-However, leading Class-A products remain important anchor products that wholesale and repeat customers consistently purchase, particularly during peak periods.
-
-![ABC Product Analysis](./images/10_abc_product_analysis.png)
-
-### Supply Chain & Merchandising Recommendations
-
-**Protect High-Performing SKUs**
-
-- Prioritize inventory availability for the Top 5 revenue-generating products.
-
-- Establish automated safety-stock thresholds.
-
-- Plan procurement ahead of Q4 seasonal demand.
-
-**Leverage Anchor Products for Cross-Selling**
-
-Bundle high-performing Class-A products with complementary Class-B/C items to:
-
-- Increase basket depth.
-
-- Encourage broader product discovery.
-
-- Counteract AOV compression during promotional periods.
-
-</details>
-
-<details>
-
-<summary><strong>5.6. RFM Customer Segmentation & Behavior</strong></summary>
-
-### Executive Summary
-
-RFM segmentation reveals substantial revenue concentration among high-value customers, alongside meaningful reactivation opportunities within at-risk and dormant segments.
-
-Champions contribute 64.7% of total revenue, highlighting the importance of protecting established customer relationships.
-
-**1. Revenue Concentration: The Champion Dependency**
-
-- Champions generate £5.66M, representing 64.7% of total revenue.
-
-- The Loyal segment contributes £914K (10.5%).
-
-- At Risk customers contribute £828K (9.5%).
-
-- Hibernating and Need Attention customers collectively contribute approximately £650K (7.5%).
-
-**Strategic Risk:** A hypothetical 10% revenue loss among Champions would put approximately £566K at risk, exceeding the entire Hibernating segment's historical revenue contribution (£495K).
-
-**2. The £1.48M Win-Back Opportunity**
-
-Customers in declining-engagement segments represent a meaningful reactivation opportunity:
-
-| Segment | Historical Revenue |
-|---|---:|
-| At Risk | £828K |
-| Hibernating | £495K |
-| Need Attention | £155K |
-| **Total** | **£1.48M** |
-![RFM Segment Revenue](./images/13_rfm_segment_revenue.png)
-
-**3. Purchasing Intensity vs. Product Preference**
-
-Top-performing products, including Heart T-Light Holder, Regency Cakestand, and Party Bunting, consistently rank among the leading products across Champions, Loyal, At Risk, and Hibernating segments.
-
-This suggests that differences between customer segments are more closely associated with purchasing frequency and order value than fundamentally different product preferences.
-
-Examples:
-
-- Champions purchase core products approximately 3x per customer, compared with 1.0–2.0x among other segments.
-
-- Regency Cakestand generates approximately £112/invoice among Champions, compared with £33–£60 across other cohorts.
-
-- At Risk customers purchase Heart T-Light Holder at 25.2 units/invoice, compared with 21.7 among Champions.
-
-**Wholesale Signal:** At Risk customers exhibit relatively high purchasing quantities, suggesting that some inactive customers may be valuable wholesale accounts rather than low-value individual shoppers.
-
-**4. Consistent B2B Purchasing Patterns**
-
-Mature customer segments demonstrate similar purchasing behavior:
-
-- Purchasing activity peaks around 12:00–13:00, representing approximately 16%–18% of segment-level activity.
-
-- Tuesday–Thursday account for the majority of weekday purchasing, with Thursday contributing approximately 21%–24%.
-
-**Data Caveat:** The Tuesday spike (32%) and 14:00 peak among New Customers are based on a very small sample (fewer than 8 invoices/SKU) and should not be interpreted as representative behavioral patterns.
-
-| Weekday Preferences | Hourly Purchase Distribution |
-|---|---|
-| ![RFM Weekday Preferences](./images/14_rfm_weekday_preferences.png) | ![RFM Hourly Preferences](./images/15_rfm_hourly_preferences.png) |
-### Segment Strategic Action Matrix
-
-| Customer Segment | Revenue | Core Behavior | Recommended Action |
-|---|---:|---|---|
-| Champions | £5.66M (64.7%) | High purchasing frequency and basket value | **Protect:** VIP account management, volume tiers, and recency monitoring |
-| At Risk | £828K (9.5%) | High units/invoice; potential wholesale buyers | **Reactivate:** Personalized win-back offers and volume pricing |
-| Loyal | £914K (10.5%) | Consistent repeat purchasing | **Upsell:** Replenishment reminders and multi-pack bundles |
-| Hibernating / Need Attention | £650K (7.5%) | Low purchasing frequency and declining engagement | **Automate:** Low-cost email reactivation campaigns |
-| Potential Loyalists / New | £498K (5.7%) | Low purchase frequency and relatively low-ticket products | **Nurture:** Day-14/Day-25 onboarding and second-order incentives |
-### Geographic Footprint Across RFM Segments
-
-Cross-analyzing geography against RFM tiers reveals that international revenue is disproportionately concentrated among high-value customers.
-
-**1. Universal UK Customer Base**
-
-The United Kingdom accounts for approximately 80%–92% of customer segment activity across RFM tiers.
-
-However, international customers contribute disproportionately to revenue within higher-value segments.
-
-**2. High-Value International Customers**
-
-Nearly 20% of Champions revenue originates outside the UK.
-
-Key international markets include:
-
-| Country | Share of Champions Revenue |
-|---|---:|
-| Netherlands | 5.0% |
-| EIRE / Ireland | 4.5% |
-| Germany | 2.5% |
-| Australia | 2.3% |
-These markets demonstrate meaningful international wholesale purchasing activity.
-
-**3. Emerging Acquisition Opportunity in Germany**
-
-Germany represents 10.6% of revenue within the New Customers segment, suggesting emerging international acquisition potential that warrants further investigation.
-
-![Country Mix Across RFM Segments](./images/18_country_revenue_by_rfm_segment.png)
-
-### Actionable Recommendations
-
-**Standardize Operational Scheduling**
-
-Consolidate marketing campaigns into a unified Tuesday–Thursday morning window (09:30–11:00) to reach customers ahead of the observed midday purchasing peak.
-
-**Prioritize Purchasing Cadence Over Product Discovery**
-
-Use proven anchor products, such as Heart T-Light Holder and Regency Cakestand, in win-back campaigns.
-
-Focus on replenishment reminders and volume-based offers rather than broad product discovery campaigns.
-
-**Prioritize International Account Management**
-
-International high-value customers require more than generic consumer marketing.
-
-Consider dedicated B2B shipping rates, customized invoicing workflows, and localized account management for key overseas markets.
-
-</details>
-
-<details>
-
-<summary><strong>5.7. Geographic Revenue Distribution & Market Expansion</strong></summary>
-
-### Executive Summary
-
-Geographic revenue demonstrates substantial dependence on the domestic UK market, with international sales primarily concentrated in Western Europe.
-
-**1. Domestic Market Dominance**
-
-The United Kingdom contributes approximately £7.24M, accounting for 82.9% of total revenue.
-
-**2. International Revenue Concentration**
-
-Non-UK revenue represents approximately 17.1% of total sales, with the largest international markets concentrated in Western Europe.
-
-| Country | Revenue | Revenue Share |
-|---|---:|---:|
-| Netherlands | £284K | 3.2% |
-| EIRE / Ireland | £257K | 2.9% |
-| Germany | £205K | 2.4% |
-| France | £184K | 2.1% |
-| Australia | £138K | 1.6% |
-| Japan | £37K | 0.4% |
-**Business Insight:** More than 93% of revenue originates from the UK and neighboring Western European markets.
-
-This geographic concentration suggests that logistics efficiency, fulfillment reliability, and cross-border shipping costs are important operational considerations.
-
-![Top Countries by Revenue](./images/17_top_countries_by_revenue.png)
-
-### Strategic Implications
-
-- Prioritize warehouse capacity and fulfillment SLAs for the UK market.
-
-- Optimize shipping costs across major UK–EU trade corridors.
-
-- Investigate opportunities to expand in established international markets such as the Netherlands, Ireland, and Germany.
-
-- Evaluate the commercial potential of emerging markets using customer value and repeat purchasing behavior rather than revenue alone.
-
-</details>
-
-<details>
-
-<summary><strong>5.8. Churn Prediction Performance</strong></summary>
-
-### Model Performance
-
-LightGBM achieved the following results using Out-of-Time (OOT) validation:
-
-| Metric | Performance |
-|---|---:|
-| ROC-AUC | 0.77 |
-| Lift\@20% | 1.35x |
-**Model Interpretation**
-
-- ROC-AUC of 0.77 indicates useful discrimination between customers classified as churn-risk and non-churn-risk under the operational churn definition.
-
-- Lift\@20% of 1.35 indicates that the highest-risk 20% of customers contain approximately 1.35 times the churn concentration of the overall population.
-
-**Key Churn-Related Features**
-
-SHAP analysis identified several important behavioral signals:
-
-- Cancellation-related behavior.
-
-- Product diversity.
-
-- Customer tenure.
-
-### Business Implications
-
-The model can support more targeted retention decisions by:
-
-1\. Prioritizing customers with elevated predicted churn risk.
-
-2\. Investigating cancellation behavior and declining product engagement.
-
-3\. Combining predicted churn probability with historical customer value.
-
-4\. Allocating retention resources toward customers with both high business value and elevated disengagement risk.
-
-**Key Takeaway:** Predictive modeling provides an additional layer of prioritization on top of traditional RFM segmentation, helping identify customers who may require earlier retention intervention.
-
-</details>
+> **Executive Summary:** Revenue demonstrated a two-phase trajectory throughout 2011: a stable baseline across H1 followed by a massive late-year inflection. Top-line expansion was overwhelmingly driven by **Customer Base Acquisition** and **late-year purchase frequency**, successfully offsetting compressed basket sizes during holiday promotions.
 
 ---
 
-# 6. Proposed Retention Strategy Framework
+### **1. Top-Line Trajectory: Mid-Year Plateau to Q4 Inflexion**
 
-The following framework translates the analytical findings into potential customer lifecycle interventions.
+* **Record Revenue Peak:** Monthly revenue climbed from **$562.7K (Jan)** to break the million-dollar barrier in October ($1.002M) before peaking at **$1.137M in November (+13.4% MoM)**.
+* **Q4 Growth Acceleration:** After range-bound performance between Feb–Aug ($442K–$659K), sales surged starting September ($938.8K), driven by seasonal holiday demand.
+
+![Chart 3: Monthly Revenue Trend, January–November 2011](images/03_monthly_revenue_trend_2011.png)
+
+---
+
+### **2. Revenue Driver Decomposition: What Powered the Surge?**
+
+$$\text{Revenue} = \text{Active Customers} \times \text{Order Frequency} \times \text{Average Order Value (AOV)}$$
+
+#### **Primary Driver: Customer Acquisition Expansion (+125% YTD)**
+* The customer base served as the core growth engine, expanding consistently from **739 active accounts in January to 1,660 in November (+124.6%)**.
+* Massive customer influx began in September (+34.9% MoM jump to 1,259 accounts), sustaining momentum through October (1,361) and November (1,660).
+
+![Chart 5: Monthly Active Customers, January–November 2011](images/05_monthly_active_customers_2011.png)
+
+#### **Secondary Driver: Late-Year Order Velocity & Purchase Frequency**
+* Purchase frequency reached an annual high of **1.59 orders/customer in November (+13.8% MoM)**.
+* Total order volume surged to **2,642 orders in November (+38.8% MoM)**, driving transaction velocity to record levels.
+
+#### **Commercial Trade-off: Volume Elasticity vs. Basket Size (AOV)**
+* Despite record top-line revenue in November, **AOV contracted sharply to $430.18 (-18.3% MoM)**.
+* *Business Insight:* High-velocity seasonal discounting (e.g., Black Friday) compressed individual basket sizes, but explosive order volume and repeat purchases easily outweighed the discount impact, maximizing total revenue.
+
+![Chart 4: Monthly AOV, Order Volume and Order Frequency with MoM Growth, January–November 2011](images/04_monthly_performance_comparison.png)
+
+---
+
+### 6. Customer Behavior: How to attract, engage and retain our customers? Any opportunities to increase monetary value from existing customer bases?
+
+A deeper drill-down into customer cohorts reveals a critical strategic pivot: **top-line growth was sustained by Customer Retention, not new acquisitions.**
+
+* **The Flipped Ratio:** While January was driven primarily by first-time buyers (**56% New vs. 44% Returning**), the balance rapidly shifted. From May onward, returning customers consistently made up **70%–80%+** of monthly active buyers.
+* **November Re-engagement Wave:** At the record revenue peak in November, **81% of active buyers were Returning Customers** (only 19% new). The year-end surge was therefore an engine of **lifecycle reactivation** rather than high-cost new customer acquisition.
+
+![Chart 5: Monthly Customer Composition: New vs. Returning Customers](images/chart_5_customer_composition.png)
+
+---
+
+### **4. Purchasing Behavior: Strong B2B / Working-Hours Footprint**
+
+Analysis of purchase distribution across days and hours highlights distinctive behavioral patterns resembling **B2B buyers, wholesalers, or office-hour shoppers**:
+
+* **Strict Working-Hour Concentration:** Transaction activity is heavily clustered between **10:00 and 15:00 (Monday–Friday)**, with daily peaks consistently occurring around **12:00–13:00 (3.0%–3.3% share per hour slot)**.
+* **Zero Saturday Activity & Late-Night Thursday:**
+  * Orders on **Saturdays are completely non-existent (0.0%)**, and Sundays only capture minimal daytime activity (10:00–16:00).
+  * **Thursday** is the sole day featuring extended evening purchasing (persisting until 19:00–20:00).
+* **November Mid-Week Stocking (Peak Season):** In November, purchase volume concentrated even more intensely on **Tuesday & Wednesday mid-day (12:00–13:00 capturing ~3.2% of all monthly orders)**, pointing to deliberate mid-week inventory replenishment ahead of weekend retail demand.
+
+![Chart 6: Purchase Day & Hour Distribution, January–November 2011](images/chart_6_heatmap_all_year.png)
+
+![Chart 7: Purchase Day & Hour Distribution, November 2011](images/07_purchase_time_heatmap_november_2011 (1).png)
+
+---
+
+---
+
+### **5. Cohort Retention Analysis: The Leaky Bucket vs. The Sleeping Giants**
+
+Analyzing monthly customer cohorts (*Chart 9*) resolves the apparent paradox between low monthly cohort retention and the 81% returning customer share:
+
+* **The Month-1 Drop-off (The Leaky Bucket):** All 2011 cohorts experience an immediate, steep churn after acquisition—**only 15%–24% of new customers place a second order in Month 1**.
+* **Stable Baseline Retention (Month 2+):** For customers surviving past Month 2, retention stabilizes remarkably well into a predictable baseline of **20%–27%**, indicating high stickiness among core converted buyers.
+* **The Holiday Reactivation Wave (The Sleeping Giants):** Rather than churning permanently, dormant customers re-activate en masse during the year-end season:
+  * Cohort `2010-12` spiked back to an extraordinary **50% retention in Month 11** (November).
+  * Cohorts `2011-01` and `2011-06` rebounded to **37% and 33% retention**, respectively.
+* **The Cumulative Pool Reality:** Because 11 historical cohorts re-engaged simultaneously in November, their aggregated volume formed **81% of active buyers**, dwarfing that single month's acquisition intake.
+
+![Chart 9: Monthly Customer Cohort Retention](images/09_cohort_retention.png)
+
+---
+
+### **💡 Strategic Recommendations: Retain vs. Acquire**
+
+> **Strategic Priority:** Shift resource allocation to **70% Retention & Lifecycle Marketing / 30% Targeted Acquisition**. Pouring budget into top-of-funnel acquisition while losing 80% of buyers within 30 days is commercially inefficient.
+
+1. **Plug the "Month-1 Drop-off" (0–30 Days Post-Purchase):**
+   * Implement automated post-purchase CRM triggers at **Day 14 and Day 25** offering a time-sensitive incentive for the **second order**. Securing order #2 is the single biggest predictor of long-term LTV.
+2. **Systematize Reactivation Ahead of Q4:**
+   * Do not wait for dormant accounts to passively return in November. Launch pre-season restocking outreach in **August–September** tailored to dormant accounts built up across H1.
+3. **VIP Loyalty & Tiered Volume Pricing for Core Accounts:**
+   * Protect high-retention cohorts (e.g., `2010-12` maintaining ~35%–50% retention) with dedicated B2B account management, volume discounts, and early-access wholesale promotions.
+
+### ---
+
+### **6. Product Portfolio & ABC Classification: Hero SKUs Anchor Revenue**
+
+An ABC analysis of product performance (*Chart 10*) highlights the revenue structure across the product catalog and identifies key operational dependencies:
+
+* **Top-Heavy Revenue Drivers (The "Hero" Products):**
+  * Revenue among top performers drops precipitously: **SKU `23843` ($168K+)** and **SKU `22423` ($142K+)** substantially outpace the catalog, generating over **$310K combined**.
+  * Beyond the top 3 SKUs, revenue stabilizes rapidly into a steady baseline, with items ranked 7th to 20th generating between $35K and $55K each.
+* **Extensive Long-Tail Catalog:**
+  * The cumulative revenue curve (pink line) shows that the **Top 20 SKUs account for only ~14% of total cumulative revenue**, far below the traditional 80% Pareto threshold (dotted line).
+  * *Business Insight:* The business runs on a massive long-tail catalog. However, the top Class-A items serve as **Anchor Products** that wholesale and repeat buyers consistently return to replenish during peak periods.
+
+![Chart 10: SKU Revenue Contribution and ABC Classification — Top 20 Products](images/10_top_sku_abc_classification.png)
+
+---
+
+### **Recommendations**
+
+1. **Zero-Tolerance Stock-Outs on Top 5 SKUs:**
+   * Because top items (`23843`, `22423`, `85123A`) generate outsized revenue, stock-outs during Q4 peak weeks represent severe top-line vulnerability. Implement **automated safety-stock buffers** and advance procurement contracts by late Q3.
+2. **Leverage Anchor SKUs for Cross-selling**
+   * Bundle high-velocity Class-A products with slower-moving Class-B/C accessories to stimulate basket depth and counteract the AOV compression observed during year-end promotions.
+
+---
+---
+
+### **7. Customer Segmentation & Behavior: RFM Dynamics**
+
+> **Executive Summary:** Top-line revenue exhibits extreme concentration risk: **Champions generate 64.7% (£5.66M) of total revenue**. Segment differences stem from **order cadence and basket depth, not product preference**—mature and lapsing segments purchase the exact same hero products.
+
+---
+
+#### **Key Takeaways & Cross-Chart Insights**
+
+1. **Extreme Revenue Concentration (The "Whale" Dependency):**
+   * **Champions account for £5.66M (64.7%)**, outpacing the second segment (*Loyal*, 10.5%) by 6x.
+   * *Strategic Risk:* A 10% churn in Champions (~£566K) wipes out more revenue than the entire *Hibernating* base (£495K).
+   * *The £1.48M Win-back Opportunity:* Lapsing pools (*At Risk* £828K + *Hibernating* £495K + *Need Attention* £155K) represent **17.0% of total revenue**.
+
+![Chart 13: Revenue Contribution by RFM Customer Segment](images/13_rfm_revenue_contribution.png)
+
+2. **Intensity vs. Taste (Identical Catalogs, Divergent Velocities):**
+   * Top products (*Heart T-Light Holder, Regency Cakestand, Party Bunting*) rank top-5 across *Champions, Loyal, At Risk,* and *Hibernating*.
+   * Lapsed customers do not suffer from product mismatch; they simply stop reordering. Champions buy their core items **~3x per customer** (vs. 1.0–2.0x for other cohorts) and order with larger basket depth (e.g., Cakestand at £112/invoice for Champions vs. £33–£60 elsewhere).
+   * *Wholesale Signal:* *At Risk* purchases Heart Holders at **25.2 units/invoice** (vs. Champions' 21.7), signaling inactive high-volume trade buyers.
+
+3. **Uniform Mid-Week/Mid-Day B2B Rhythm:**
+   * **No segment-level timing divergence:** All mature cohorts peak mid-day (**12:00–13:00 at 16%–18%**) and concentrate orders mid-week (**Tuesday–Thursday, peaking Thursday at 21%–24%**).
+   * *Data Caveat:* The Tuesday spike (32%) and 14:00 peak for *New Customers* is a low-sample window artifact (n < 8 invoices/SKU)—not an intrinsic consumer habit.
+
+| Purchase Day Distribution | Hourly Purchase Distribution |
+| :---: | :---: |
+| ![Chart 14: Weekday Distribution by RFM Segment](images/chart_14_weekday_rfm_distribution.png) | ![Chart 15: Hourly Distribution by RFM Segment](images/15_hourly_rfm_distribution.png) |
+
+---
+
+#### **Segment Strategic Action Matrix**
+
+| Segment | Revenue (% Share) | Core Behavior & Hero Products | Action Plan & Timing |
+| :--- | :---: | :--- | :--- |
+| **Champions** | **£5.66M** (64.7%) | Reorder ~3x; High basket (£112/inv on Cakestand). *Heart Holder, Cakestand, Jumbo Bag.* | **Protect (High):** Assign dedicated VIP account managers, volume tiers, and automated alerts on recency drift. |
+| **At Risk** | **£828K** (9.5%) | High units/invoice (25.2 units on Heart Holder). B2B wholesale profile. | **Reactivate (High):** Automated volume-pricing win-back nudges for their previously purchased hero items. |
+| **Loyal** | **£914K** (10.5%) | Steady reorders (~2x); flatter weekday profile across Tue–Thu. | **Upsell (High):** Automated replenishment cycles and multi-pack bundles to push cadence toward Champions. |
+| **Hibernating / Need Attention** | **£650K** (7.5%) | Single-purchase behavior (~1.0x); sharp Thursday peak (~24%). | **Automate (Med):** Low-cost automated email reactivation featuring top proven catalog items; cap ad spend. |
+| **Potential Loyalists / New** | **£498K** (5.7%) | Low frequency (~1.0–1.2x); low-ticket items (Playing Cards, Bags). | **Nurture (Med):** Day-14/Day-25 onboarding journey with second-order incentives on core hero lines. |
+
+---
+
+#### **Actionable Recommendations**
+* **Standardize Operational Scheduling:** Consolidate marketing campaigns into a unified **Tuesday–Thursday morning window (09:30–11:00)** to intercept the universal 12:00–13:00 purchasing surge. Segment-specific scheduling adds complexity without data support.
+* **Prioritize Cadence Over Discovery:** Win-back strategies should leverage proven anchor products (*Heart Holder, Cakestand*) via volume discounts and replenishment reminders, rather than pushing new catalog exploration.
+
+### 6.5 Churn Prediction Performance
+
+- LightGBM achieved an ROC-AUC of **0.77** using Out-of-Time validation.
+- The model achieved **1.35× Lift@20%**.
+- SHAP analysis highlighted cancellations, product diversity, and customer tenure among the important churn-related features.
+
+*Business Implications:*
+- Use model scores to prioritize retention outreach.
+- Investigate cancellation behavior and declining product engagement.
+- Combine predictive scores with customer value when allocating retention resources.
+
+</details>
+
+<details>
+<summary><strong>7. Proposed Retention Strategy Framework</strong></summary>
 
 | Customer Segment | Observed Behavior | Proposed Strategy |
 |---|---|---|
@@ -582,92 +335,60 @@ The following framework translates the analytical findings into potential custom
 | Single-Product Customers | Limited product engagement | Cross-selling and complementary product offers |
 | High-Value Customers | High historical monetary contribution | Personalized offers and loyalty initiatives |
 | High Churn-Risk Customers | Elevated model-predicted churn risk | Prioritized retention outreach |
-The proposed framework is intended to guide future retention experiments.
 
-Its actual business impact would need to be measured through controlled campaign evaluation, with incremental revenue, repeat purchase rate, and customer retention as potential success metrics.
+The proposed framework is intended to guide future retention experiments. Its actual business impact would need to be measured through controlled campaign evaluation.
+
+</details>
 
 <details>
+<summary><strong>8. Limitations & Further Analysis</strong></summary>
 
-<summary><strong>7. Limitations & Further Analysis</strong></summary>
+**Limitations**
 
-### Limitations
+- The dataset covers approximately one year, limiting the ability to assess long-term customer lifetime behavior.
+- Churn is defined using a behavioral proxy rather than an explicitly observed customer attrition label.
+- Customer-level analysis excludes transactions without a `CustomerID`.
+- Predictive performance reflects the operational churn definition and does not necessarily represent confirmed customer attrition.
+- Historical transaction data does not capture the impact of actual retention interventions.
 
-- **Limited Observation Period:** The dataset covers approximately one year, limiting the ability to assess long-term customer lifetime behavior.
-
-- **Proxy-Based Churn Definition:** Churn is defined using a behavioral proxy rather than an explicitly observed customer attrition label.
-
-- **Incomplete Customer Identification:** Customer-level analysis excludes transactions without a `CustomerID`.
-
-- **Model Generalizability:** Predictive performance reflects the operational churn definition and does not necessarily represent confirmed customer attrition.
-
-- **No Intervention Data:** Historical transaction records do not capture the actual impact of retention campaigns or other customer interventions.
-
-### Further Analysis
+**Further Analysis**
 
 - Validate the churn definition using longer observation periods.
-
 - Evaluate retention strategies through controlled experiments.
-
 - Develop customer lifetime value (CLV) estimates.
-
-- Monitor model performance and changing churn patterns over time.
-
+- Monitor model performance and churn patterns over time.
 - Assess the incremental revenue and retention impact of targeted interventions.
 
 </details>
 
 <details>
-
-<summary><strong>8. Tools & Technologies</strong></summary>
+<summary><strong>9. Tools & Technologies</strong></summary>
 
 **Data Processing**
 
-![PySpark](https\://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
-
-![Spark SQL](https\://img.shields.io/badge/Spark_SQL-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Spark SQL](https://img.shields.io/badge/Spark_SQL-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 
 **Data Analysis**
 
-![Pandas](https\://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-
-![NumPy](https\://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
 **Data Visualization**
 
-![Matplotlib](https\://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
-
-![Seaborn](https\://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
 
 **Machine Learning**
 
-![Scikit-Learn](https\://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-
-![XGBoost](https\://img.shields.io/badge/XGBoost-EC6B23?style=for-the-badge)
-
-![LightGBM](https\://img.shields.io/badge/LightGBM-02569B?style=for-the-badge)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-EC6B23?style=for-the-badge)
+![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=for-the-badge)
 
 **Development Environment**
 
-![Python](https\://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-![Jupyter](https\://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-
-![Git](https\://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-
-</details>
-
-<details>
-
-<summary><strong>9. Project Conclusion</strong></summary>
-
-This analysis highlights three major opportunities for improving customer growth and retention:
-
-1\. **Improve Early Customer Retention:** Address the substantial Month-1 drop-off through structured onboarding and second-purchase incentives.
-
-2\. **Protect High-Value Customer Relationships:** Prioritize Champions and high-value international accounts through personalized retention and replenishment strategies.
-
-3\. **Enable Proactive Retention:** Combine RFM segmentation with churn prediction to identify valuable customers at risk of disengagement.
-
-By integrating transactional analysis, customer segmentation, and predictive modeling, the project demonstrates how historical purchasing data can support more informed commercial decisions and customer lifecycle management.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 </details>
