@@ -78,7 +78,8 @@ The dataset contains transactional records from a UK-based online retailer betwe
 
 Churn = 1 if Recency > 108 days AND Frequency <= 4
 
-Churn = 0 otherwise```
+Churn = 0 otherwise
+```
 
 The dataset does not contain an explicit churn label. This rule-based definition is an operational proxy rather than directly observed customer attrition.
 
@@ -228,7 +229,7 @@ During November, purchasing activity became even more concentrated around Tuesda
 
 **Business Insight:** The consistent weekday and midday purchasing patterns suggest a substantial business-oriented customer base. This may indicate wholesale purchasing and inventory replenishment behavior rather than purely individual consumer shopping.
 
-![Purchase Time Heatmap](./images/07_purchase_time_heatmap_november_2011 (1).png)
+![Purchase Time Heatmap](./images/07_purchase_time_heatmap_november_2011.png)
 
 </details>
 
