@@ -312,7 +312,7 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
 * **Standardize Operational Scheduling:** Consolidate marketing campaigns into a unified **Tuesday–Thursday morning window (09:30–11:00)** to intercept the universal 12:00–13:00 purchasing surge. Segment-specific scheduling adds complexity without data support.
 * **Prioritize Cadence Over Discovery:** Win-back strategies should leverage proven anchor products (*Heart Holder, Cakestand*) via volume discounts and replenishment reminders, rather than pushing new catalog exploration.
 
-### 6.5 Churn Prediction Performance
+### 6.5 Churn Prediction: What Predicts A Future Lapsers? What's the "golden time window" and techniques we can use to reduce churn rate in the future? 
 
 - LightGBM achieved an ROC-AUC of **0.77** using Out-of-Time validation.
 - The model achieved **1.35× Lift@20%**.
@@ -324,7 +324,7 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
 - Combine predictive scores with customer value when allocating retention resources.
 
 </details>
-
+---
 <details>
 <summary><strong>7. Proposed Retention Strategy Framework</strong></summary>
 
