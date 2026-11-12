@@ -191,7 +191,7 @@ A deeper drill-down into customer cohorts reveals a critical strategic pivot: **
 * **The Flipped Ratio:** While January was driven primarily by first-time buyers (**56% New vs. 44% Returning**), the balance rapidly shifted. From May onward, returning customers consistently made up **70%–80%+** of monthly active buyers.
 * **November Re-engagement Wave:** At the record revenue peak in November, **81% of active buyers were Returning Customers** (only 19% new). The year-end surge was therefore an engine of **lifecycle reactivation** rather than high-cost new customer acquisition.
 
-![Chart 5: Monthly Customer Composition: New vs. Returning Customers](images/chart_5_customer_composition.png)
+![Chart 5: Monthly Customer Composition: New vs. Returning Customers](images/06_new_vs_returning_customers.png)
 
 ---
 
@@ -205,9 +205,9 @@ Analysis of purchase distribution across days and hours highlights distinctive b
   * **Thursday** is the sole day featuring extended evening purchasing (persisting until 19:00–20:00).
 * **November Mid-Week Stocking (Peak Season):** In November, purchase volume concentrated even more intensely on **Tuesday & Wednesday mid-day (12:00–13:00 capturing ~3.2% of all monthly orders)**, pointing to deliberate mid-week inventory replenishment ahead of weekend retail demand.
 
-![Chart 6: Purchase Day & Hour Distribution, January–November 2011](images/chart_6_heatmap_all_year.png)
+![Chart 6: Purchase Day & Hour Distribution, January–November 2011](images/06_purchase_time_heatmap_2011.png)
 
-![Chart 7: Purchase Day & Hour Distribution, November 2011](images/07_purchase_time_heatmap_november_2011 (1).png)
+![Chart 7: Purchase Day & Hour Distribution, November 2011](images/08_purchase_time_heatmap_november_2011.png)
 
 ---
 
@@ -252,7 +252,7 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
   * The cumulative revenue curve (pink line) shows that the **Top 20 SKUs account for only ~14% of total cumulative revenue**, far below the traditional 80% Pareto threshold (dotted line).
   * *Business Insight:* The business runs on a massive long-tail catalog. However, the top Class-A items serve as **Anchor Products** that wholesale and repeat buyers consistently return to replenish during peak periods.
 
-![Chart 10: SKU Revenue Contribution and ABC Classification — Top 20 Products](images/10_top_sku_abc_classification.png)
+![Chart 10: SKU Revenue Contribution and ABC Classification — Top 20 Products](images/10_abc_product_analysis.png)
 
 ---
 
@@ -279,7 +279,7 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
    * *Strategic Risk:* A 10% churn in Champions (~£566K) wipes out more revenue than the entire *Hibernating* base (£495K).
    * *The £1.48M Win-back Opportunity:* Lapsing pools (*At Risk* £828K + *Hibernating* £495K + *Need Attention* £155K) represent **17.0% of total revenue**.
 
-![Chart 13: Revenue Contribution by RFM Customer Segment](images/13_rfm_revenue_contribution.png)
+![Chart 13: Revenue Contribution by RFM Customer Segment](images/13_rfm_segment_revenue.png)
 
 2. **Intensity vs. Taste (Identical Catalogs, Divergent Velocities):**
    * Top products (*Heart T-Light Holder, Regency Cakestand, Party Bunting*) rank top-5 across *Champions, Loyal, At Risk,* and *Hibernating*.
@@ -292,7 +292,7 @@ An ABC analysis of product performance (*Chart 10*) highlights the revenue struc
 
 | Purchase Day Distribution | Hourly Purchase Distribution |
 | :---: | :---: |
-| ![Chart 14: Weekday Distribution by RFM Segment](images/chart_14_weekday_rfm_distribution.png) | ![Chart 15: Hourly Distribution by RFM Segment](images/15_hourly_rfm_distribution.png) |
+| ![Chart 14: Weekday Distribution by RFM Segment](images/14_rfm_weekday_preferences.png) | ![Chart 15: Hourly Distribution by RFM Segment](images/15_rfm_hourly_preferences.png) |
 
 ---
 
